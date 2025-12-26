@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CTF Writeup</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- Markdown styling -->
+    <style>
+        .markdown img { max-width: 100%; border-radius: 8px; }
+        .markdown pre { background: #0a0a0a; padding: 1rem; overflow-x: auto; }
+        .markdown code { color: #00ff00; }
+    </style>
+</head>
+
+<body class="bg-black text-gray-200 px-6 py-12">
+
+<a href="../index.html#authored"
+   class="text-green-400 hover:underline mb-8 inline-block">
+← Back to Portfolio
+</a>
+
+<div id="content" class="markdown max-w-5xl mx-auto"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const file = params.get("file");
+
+if (!file) {
+    document.getElementById("content").innerHTML =
+        "<p class='text-red-400'>No writeup specified.</p>";
+} else {
+    fetch(file)
+        .then(res => res.text())
+        .then(md => {
+            document.getElementById("content").innerHTML =
+                marked.parse(md);
+        })
+        .catch(() => {
+            document.getElementById("content").innerHTML =
+                "<p class='text-red-400'>Failed to load writeup.</p>";
+        });
+}
+</script>
+
+</body>
+</html>
