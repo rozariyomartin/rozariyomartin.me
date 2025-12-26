@@ -34,6 +34,7 @@
                     <a href="#about" class="nav-link text-gray-300">/about</a>
                     <a href="#writeups" class="nav-link text-gray-300">/writeups</a>
                     <a href="#projects" class="nav-link text-gray-300">/projects</a>
+                    <a href="#authored" class="nav-link text-gray-300">/authored</a>
                     <a href="#contact" class="nav-link text-gray-300">/contact</a>
                 </div>
                  <!-- Mobile Menu Button -->
@@ -99,69 +100,105 @@
             </div>
         </section>
 
-        <!-- Writeups Section -->
-        <section id="writeups" class="py-20 px-4 container mx-auto">
-            <h2 class="text-4xl font-bold text-center mb-12 reveal">./Latest_Writeups</h2>
+        <section id="authored" class="py-20 px-4 container mx-auto bg-black/20">
+            <h2 class="text-4xl font-bold text-center mb-12 reveal">./Authored_Challenges</h2>
+
+            <p class="max-w-2xl mx-auto text-center text-gray-400 mb-12 reveal">
+                Original Capture The Flag challenges authored for <strong>L3m0nCTF 2025</strong>.
+                Click any challenge to read the full writeup directly on this site.
+            </p>
+
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Writeup Card 1 -->
+
+                <!-- Internal Notation -->
                 <div class="card p-6 rounded-lg reveal">
-                    <h3 class="text-xl font-bold mb-2 text-green-400">PwnTheBox: The 'Echo' Machine</h3>
-                    <p class="text-sm text-gray-400 mb-4">A deep dive into exploiting a vulnerable web server with a critical buffer overflow.</p>
-                    <span class="inline-block bg-gray-700 text-green-300 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">#WebApp</span>
-                    <span class="inline-block bg-gray-700 text-green-300 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">#BinaryExploitation</span>
-                    <a href="#" class="block mt-4 text-green-400 hover:underline">Read More &rarr;</a>
+                    <h3 class="text-xl font-bold text-green-400 mb-2">
+                        Internal Notation
+                    </h3>
+                    <p class="text-sm text-gray-400 mb-3">
+                        Cryptography · Enigma-style rotor cipher
+                    </p>
+                    <span class="inline-block bg-gray-700 text-green-300 text-xs font-semibold px-2.5 py-0.5 rounded-full">
+                        L3m0nCTF 2025
+                    </span>
+                    <a href="writeups/view.html?file=https://raw.githubusercontent.com/rozariyomartin/L3m0nCTF2025-Writeups/refs/heads/main/Cryptography/InternalNotation/Readme.md"
+                    class="block mt-4 text-green-400 hover:underline">
+                        Read Writeup →
+                    </a>
                 </div>
-                <!-- Writeup Card 2 -->
-                <div class="card p-6 rounded-lg reveal" style="transition-delay: 100ms;">
-                    <h3 class="text-xl font-bold mb-2 text-green-400">Deconstructing Phishing Kits</h3>
-                    <p class="text-sm text-gray-400 mb-4">Analyzing modern phishing kits to understand their obfuscation techniques.</p>
-                    <span class="inline-block bg-gray-700 text-blue-300 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">#ThreatIntel</span>
-                    <span class="inline-block bg-gray-700 text-blue-300 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">#ReverseEngineering</span>
-                    <a href="#" class="block mt-4 text-green-400 hover:underline">Read More &rarr;</a>
+
+                <!-- Rotating Shadows -->
+                <div class="card p-6 rounded-lg reveal">
+                    <h3 class="text-xl font-bold text-green-400 mb-2">
+                        Rotating Shadows
+                    </h3>
+                    <p class="text-sm text-gray-400 mb-3">
+                        Cryptography · Custom mechanical cipher
+                    </p>
+                    <span class="inline-block bg-gray-700 text-green-300 text-xs font-semibold px-2.5 py-0.5 rounded-full">
+                        L3m0nCTF 2025
+                    </span>
+                    <a href="writeups/view.html?file=https://raw.githubusercontent.com/rozariyomartin/L3m0nCTF2025-Writeups/main/Cryptography/RotatingShadows/Readme.md"
+                    class="block mt-4 text-green-400 hover:underline">
+                        Read Writeup →
+                    </a>
                 </div>
-                <!-- Writeup Card 3 -->
-                <div class="card p-6 rounded-lg reveal" style="transition-delay: 200ms;">
-                    <h3 class="text-xl font-bold mb-2 text-green-400">Wireless Network Pen-Testing</h3>
-                    <p class="text-sm text-gray-400 mb-4">A practical guide to cracking WPA2/3 and performing man-in-the-middle attacks.</p>
-                    <span class="inline-block bg-gray-700 text-purple-300 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">#WiFi</span>
-                    <span class="inline-block bg-gray-700 text-purple-300 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">#Networking</span>
-                    <a href="#" class="block mt-4 text-green-400 hover:underline">Read More &rarr;</a>
+
+                <!-- Mystery Call -->
+                <div class="card p-6 rounded-lg reveal">
+                    <h3 class="text-xl font-bold text-green-400 mb-2">
+                        Mystery Call
+                    </h3>
+                    <p class="text-sm text-gray-400 mb-3">
+                        Forensics · Audio · DTMF · XOR
+                    </p>
+                    <span class="inline-block bg-gray-700 text-green-300 text-xs font-semibold px-2.5 py-0.5 rounded-full">
+                        L3m0nCTF 2025
+                    </span>
+                    <a href="writeups/view.html?file=https://raw.githubusercontent.com/rozariyomartin/L3m0nCTF2025-Writeups/main/Forensics/LastCall/Readme.md"
+                    class="block mt-4 text-green-400 hover:underline">
+                        Read Writeup →
+                    </a>
                 </div>
+
             </div>
         </section>
 
-        <!-- Projects Section -->
-        <section id="projects" class="py-20 px-4 bg-black/20">
-            <div class="container mx-auto">
-                <h2 class="text-4xl font-bold text-center mb-12 reveal">./Personal_Projects</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Project Card 1 -->
-                    <div class="card p-6 rounded-lg reveal">
-                        <h3 class="text-xl font-bold mb-2 text-green-400">CipherScan</h3>
-                        <p class="text-sm text-gray-400 mb-4">A high-speed port scanner and vulnerability assessment tool built in Python.</p>
-                        <span class="inline-block bg-gray-700 text-yellow-300 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">#Python</span>
-                        <span class="inline-block bg-gray-700 text-yellow-300 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">#Networking</span>
-                        <a href="#" class="block mt-4 text-green-400 hover:underline">View on GitHub &rarr;</a>
-                    </div>
-                    <!-- Project Card 2 -->
-                    <div class="card p-6 rounded-lg reveal" style="transition-delay: 100ms;">
-                        <h3 class="text-xl font-bold mb-2 text-green-400">ThreatFeed Aggregator</h3>
-                        <p class="text-sm text-gray-400 mb-4">A web application that aggregates and displays real-time threat intelligence from various open-source feeds.</p>
-                        <span class="inline-block bg-gray-700 text-red-300 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">#Go</span>
-                        <span class="inline-block bg-gray-700 text-red-300 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">#API</span>
-                        <a href="#" class="block mt-4 text-green-400 hover:underline">View on GitHub &rarr;</a>
-                    </div>
-                    <!-- Project Card 3 -->
-                    <div class="card p-6 rounded-lg reveal" style="transition-delay: 200ms;">
-                        <h3 class="text-xl font-bold mb-2 text-green-400">HoneyPot.js</h3>
-                        <p class="text-sm text-gray-400 mb-4">A lightweight, low-interaction honeypot written in Node.js to capture and log malicious web requests.</p>
-                        <span class="inline-block bg-gray-700 text-blue-300 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">#NodeJS</span>
-                        <span class="inline-block bg-gray-700 text-blue-300 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">#Cybersecurity</span>
-                        <a href="#" class="block mt-4 text-green-400 hover:underline">View on GitHub &rarr;</a>
-                    </div>
+
+
+        <!-- Writeups Section -->
+        <section id="writeups" class="py-20 px-4 container mx-auto text-center">
+                <h2 class="text-4xl font-bold mb-12 reveal">./Latest_Writeups</h2>
+
+                <div class="inline-block px-8 py-4 border border-green-500/50 rounded-lg
+                            text-green-400 font-mono tracking-wider reveal
+                            shadow-[0_0_15px_rgba(0,255,0,0.25)]">
+                    🚧 COMING SOON
                 </div>
+
+                <p class="mt-6 text-sm text-gray-500 reveal">
+                    Authored challenge analyses will be published here.
+                </p>
+            </section>
+
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-20 px-4 bg-black/20 text-center">
+            <div class="container mx-auto">
+                <h2 class="text-4xl font-bold mb-12 reveal">./Personal_Projects</h2>
+
+                <div class="inline-block px-8 py-4 border border-green-500/50 rounded-lg
+                            text-green-400 font-mono tracking-wider reveal
+                            shadow-[0_0_15px_rgba(0,255,0,0.25)]">
+                    🚧 COMING SOON
+                </div>
+
+                <p class="mt-6 text-sm text-gray-500 reveal">
+                    Selected projects will appear here in the future.
+                </p>
             </div>
         </section>
+
 
         <!-- Contact Section -->
         <footer id="contact" class="py-16 text-center">
