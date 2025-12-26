@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ethical Hacker Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="overflow-x-hidden">
+
+    <canvas id="glitch-bg"></canvas>
+    <div class="scan-lines"></div>
+
+    <!-- Pre-loader Screen -->
+    <div id="preloader">
+        <div class="loader-text">[Initializing system...]</div>
+        <div class="loader-bar"></div>
+        <div class="loader-text">[Loading assets...]</div>
+    </div>
+
+    <!-- Main Content Wrapper -->
+    <div id="main-content" class="opacity-0 transition-opacity duration-1000">
+        
+        <!-- Header and Navigation -->
+        <header class="fixed top-0 left-0 w-full z-50 bg-black/30 backdrop-blur-md border-b border-gray-800/50">
+            <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+                <a href="#home" class="text-2xl font-bold font-orbitron text-white">R0z4r1y0</a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link text-gray-300">/home</a>
+                    <a href="#about" class="nav-link text-gray-300">/about</a>
+                    <a href="#writeups" class="nav-link text-gray-300">/writeups</a>
+                    <a href="#projects" class="nav-link text-gray-300">/projects</a>
+                    <a href="#contact" class="nav-link text-gray-300">/contact</a>
+                </div>
+                 <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-white">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </nav>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden bg-black/50">
+                <a href="#home" class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-800">/home</a>
+                <a href="#about" class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-800">/about</a>
+                <a href="#writeups" class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-800">/writeups</a>
+                <a href="#projects" class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-800">/projects</a>
+                <a href="#contact" class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-800">/contact</a>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section id="home" class="min-h-screen flex items-center justify-center text-center px-4">
+            <div class="w-full max-w-4xl">
+                <h1 class="glitch text-4xl md:text-6xl lg:text-8xl" data-text="Martin Rozariyo I">
+                    Martin Rozariyo I
+                </h1>
+                <p id="typewriter" class="mt-4 text-lg md:text-xl lg:text-2xl text-green-400 max-w-2xl mx-auto">
+                    CTF Player & Security Researcher
+                </p>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 px-4 container mx-auto bg-black/20">
+            <h2 class="text-4xl font-bold text-center mb-16 reveal">./About_Me</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-center">
+                <!-- Image Column -->
+                <div class="md:col-span-1 flex justify-center reveal">
+                     <div class="relative w-64 h-64 rounded-full overflow-hidden border-2 border-green-500/50 p-1 shadow-[0_0_25px_rgba(0,255,0,0.3)]">
+                        <img src="https://placehold.co/256x256/010101/00ff00?text=USER" alt="Your Profile Picture" class="rounded-full w-full h-full object-cover">
+                     </div>
+                </div>
+                <!-- Text Column -->
+                <div class="md:col-span-2 reveal" style="transition-delay: 100ms;">
+                    <p class="text-lg text-gray-300 mb-6">
+                        Hello! I'm Martin Rozariyo, a passionate cybersecurity professional with a knack for breaking things to make them better. My journey into the digital world began with a simple curiosity about how systems work, which quickly evolved into a deep-seated drive to understand and mitigate security vulnerabilities. I thrive on the challenge of dissecting complex systems, uncovering hidden weaknesses, and developing robust defenses.
+                    </p>
+                    <p class="text-gray-400">
+                        This portfolio is a terminal into my world, showcasing a collection of my projects, research, and writeups from various CTFs and personal explorations. My goal is to continuously learn, share knowledge, and contribute to a more secure digital future.
+                    </p>
+                </div>
+            </div>
+            <!-- Skills subsection -->
+            <div class="mt-20 reveal">
+                 <h3 class="text-3xl font-bold text-center mb-10">Core Skillset</h3>
+                 <div class="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
+                    <span class="skill-tag">Web Application Pentesting</span>
+                    <span class="skill-tag">Network Security</span>
+                    <span class="skill-tag">Reverse Engineering</span>
+                    <span class="skill-tag">Python Scripting</span>
+                    <span class="skill-tag">Linux/Unix Systems</span>
+                    <span class="skill-tag">Threat Analysis</span>
+                    <span class="skill-tag">Cryptography</span>
+                    <span class="skill-tag">Forensics</span>
+                 </div>
+            </div>
+        </section>
+
+        <!-- Writeups Section -->
+        <section id="writeups" class="py-20 px-4 container mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-12 reveal">./Latest_Writeups</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Writeup Card 1 -->
+                <div class="card p-6 rounded-lg reveal">
+                    <h3 class="text-xl font-bold mb-2 text-green-400">PwnTheBox: The 'Echo' Machine</h3>
+                    <p class="text-sm text-gray-400 mb-4">A deep dive into exploiting a vulnerable web server with a critical buffer overflow.</p>
+                    <span class="inline-block bg-gray-700 text-green-300 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">#WebApp</span>
+                    <span class="inline-block bg-gray-700 text-green-300 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">#BinaryExploitation</span>
+                    <a href="#" class="block mt-4 text-green-400 hover:underline">Read More &rarr;</a>
+                </div>
+                <!-- Writeup Card 2 -->
+                <div class="card p-6 rounded-lg reveal" style="transition-delay: 100ms;">
+                    <h3 class="text-xl font-bold mb-2 text-green-400">Deconstructing Phishing Kits</h3>
+                    <p class="text-sm text-gray-400 mb-4">Analyzing modern phishing kits to understand their obfuscation techniques.</p>
+                    <span class="inline-block bg-gray-700 text-blue-300 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">#ThreatIntel</span>
+                    <span class="inline-block bg-gray-700 text-blue-300 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">#ReverseEngineering</span>
+                    <a href="#" class="block mt-4 text-green-400 hover:underline">Read More &rarr;</a>
+                </div>
+                <!-- Writeup Card 3 -->
+                <div class="card p-6 rounded-lg reveal" style="transition-delay: 200ms;">
+                    <h3 class="text-xl font-bold mb-2 text-green-400">Wireless Network Pen-Testing</h3>
+                    <p class="text-sm text-gray-400 mb-4">A practical guide to cracking WPA2/3 and performing man-in-the-middle attacks.</p>
+                    <span class="inline-block bg-gray-700 text-purple-300 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">#WiFi</span>
+                    <span class="inline-block bg-gray-700 text-purple-300 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">#Networking</span>
+                    <a href="#" class="block mt-4 text-green-400 hover:underline">Read More &rarr;</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-20 px-4 bg-black/20">
+            <div class="container mx-auto">
+                <h2 class="text-4xl font-bold text-center mb-12 reveal">./Personal_Projects</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project Card 1 -->
+                    <div class="card p-6 rounded-lg reveal">
+                        <h3 class="text-xl font-bold mb-2 text-green-400">CipherScan</h3>
+                        <p class="text-sm text-gray-400 mb-4">A high-speed port scanner and vulnerability assessment tool built in Python.</p>
+                        <span class="inline-block bg-gray-700 text-yellow-300 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">#Python</span>
+                        <span class="inline-block bg-gray-700 text-yellow-300 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">#Networking</span>
+                        <a href="#" class="block mt-4 text-green-400 hover:underline">View on GitHub &rarr;</a>
+                    </div>
+                    <!-- Project Card 2 -->
+                    <div class="card p-6 rounded-lg reveal" style="transition-delay: 100ms;">
+                        <h3 class="text-xl font-bold mb-2 text-green-400">ThreatFeed Aggregator</h3>
+                        <p class="text-sm text-gray-400 mb-4">A web application that aggregates and displays real-time threat intelligence from various open-source feeds.</p>
+                        <span class="inline-block bg-gray-700 text-red-300 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">#Go</span>
+                        <span class="inline-block bg-gray-700 text-red-300 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">#API</span>
+                        <a href="#" class="block mt-4 text-green-400 hover:underline">View on GitHub &rarr;</a>
+                    </div>
+                    <!-- Project Card 3 -->
+                    <div class="card p-6 rounded-lg reveal" style="transition-delay: 200ms;">
+                        <h3 class="text-xl font-bold mb-2 text-green-400">HoneyPot.js</h3>
+                        <p class="text-sm text-gray-400 mb-4">A lightweight, low-interaction honeypot written in Node.js to capture and log malicious web requests.</p>
+                        <span class="inline-block bg-gray-700 text-blue-300 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">#NodeJS</span>
+                        <span class="inline-block bg-gray-700 text-blue-300 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">#Cybersecurity</span>
+                        <a href="#" class="block mt-4 text-green-400 hover:underline">View on GitHub &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <footer id="contact" class="py-16 text-center">
+            <div class="container mx-auto px-4 reveal">
+                <h2 class="text-3xl font-bold mb-4">Connect with me</h2>
+                <p class="max-w-md mx-auto mb-8 text-gray-400">
+                    Open to collaboration and new opportunities. Let's connect and build a more secure digital world.
+                </p>
+                <div class="flex justify-center space-x-6 text-gray-400">
+                    <a href="#" class="hover:text-green-400 transition-colors duration-300">GitHub</a>
+                    <a href="#" class="hover:text-green-400 transition-colors duration-300">LinkedIn</a>
+                    <a href="#" class="hover:text-green-400 transition-colors duration-300">X (Twitter)</a>
+                    <a href="#" class="hover:text-green-400 transition-colors duration-300">HackTheBox</a>
+                </div>
+                <div class="mt-12 text-sm text-gray-600">
+                    <p>&copy; 2024 [Your_Name]. All rights reserved.</p>
+                    <p>Executing with 0 errors.</p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
