@@ -6,40 +6,124 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Tailwind + Fonts -->
+    <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
 
-    <!-- Your main CSS -->
-    <link rel="stylesheet" href="../css/style.css">
+    <!-- Markdown renderer -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <style>
+        body {
+            font-family: 'Fira Code', monospace;
+            background-color: #010101;
+            color: #e0e0e0;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        /* Scan lines */
+        .scan-lines {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 50;
+            background: linear-gradient(
+                to bottom,
+                rgba(0,0,0,0),
+                rgba(0,0,0,0.15) 50%,
+                rgba(0,0,0,0)
+            );
+            background-size: 100% 3px;
+            animation: scan 6s linear infinite;
+        }
+
+        @keyframes scan {
+            from { background-position-y: 0; }
+            to   { background-position-y: 200px; }
+        }
+
+        /* Markdown styling */
+        .markdown h1 { color: #00ff00; font-size: 2.5rem; margin-top: 2rem; }
+        .markdown h2 { color: #00ff00; font-size: 2rem; margin-top: 2rem; }
+        .markdown h3 { color: #00ccff; font-size: 1.4rem; margin-top: 1.5rem; }
+
+        .markdown p {
+            margin: 1rem 0;
+            line-height: 1.7;
+        }
+
+        .markdown code {
+            color: #00ff00;
+            background: #0a0a0a;
+            padding: 0.2em 0.4em;
+            border-radius: 4px;
+        }
+
+        .markdown pre {
+            background: #0a0a0a;
+            padding: 1rem;
+            overflow-x: auto;
+            border-left: 3px solid #00ff00;
+            margin: 1.5rem 0;
+        }
+
+        .markdown img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin: 1.5rem auto;
+        }
+
+        .markdown hr {
+            border-color: #333;
+            margin: 2rem 0;
+        }
+
+        .markdown ul {
+            list-style: disc;
+            padding-left: 1.5rem;
+        }
+
+        .markdown blockquote {
+            border-left: 3px solid #00ff00;
+            padding-left: 1rem;
+            color: #aaa;
+            margin: 1.5rem 0;
+        }
+
+        /* Glitch canvas */
+        #glitch-bg {
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+        }
+    </style>
 </head>
 
-<body class="overflow-x-hidden">
+<body>
 
-<!-- Effects (same as main site) -->
 <canvas id="glitch-bg"></canvas>
 <div class="scan-lines"></div>
 
-<div class="relative z-10 px-6 py-12 max-w-5xl mx-auto">
+<div class="max-w-6xl mx-auto px-6 py-12">
 
     <a href="../index.html#authored"
-       class="text-green-400 hover:underline mb-8 inline-block font-mono">
+       class="text-green-400 hover:underline font-mono mb-8 inline-block">
         ← Back to Portfolio
     </a>
 
-    <!-- Markdown Content -->
-    <article id="content"
-             class="prose prose-invert max-w-none font-mono">
-    </article>
+    <div id="content" class="markdown"></div>
 
 </div>
 
-<!-- Markdown Renderer -->
-<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-
 <script>
+/* -------- Markdown Loader -------- */
 const params = new URLSearchParams(window.location.search);
 const file = params.get("file");
 
@@ -50,18 +134,46 @@ if (!file) {
     fetch(file)
         .then(res => res.text())
         .then(md => {
-            document.getElementById("content").innerHTML =
-                marked.parse(md);
+            document.getElementById("content").innerHTML = marked.parse(md);
         })
         .catch(() => {
             document.getElementById("content").innerHTML =
                 "<p class='text-red-400'>Failed to load writeup.</p>";
         });
 }
-</script>
 
-<!-- Same JS as main site (glitch animation etc.) -->
-<script src="../js/script.js"></script>
+/* -------- Glitch Background -------- */
+const canvas = document.getElementById("glitch-bg");
+const ctx = canvas.getContext("2d");
+
+function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
+resize();
+window.addEventListener("resize", resize);
+
+const colors = ["#00ff00", "#00ccff", "#ff00ff"];
+
+function glitch() {
+    ctx.fillStyle = "rgba(1,1,1,0.15)";
+    ctx.fillRect(0,0,canvas.width,canvas.height);
+
+    for (let i = 0; i < Math.random()*5; i++) {
+        ctx.fillStyle = colors[Math.floor(Math.random()*colors.length)];
+        ctx.globalAlpha = Math.random()*0.2;
+        ctx.fillRect(
+            Math.random()*canvas.width,
+            Math.random()*canvas.height,
+            Math.random()*200+40,
+            Math.random()*2+1
+        );
+        ctx.globalAlpha = 1;
+    }
+    requestAnimationFrame(glitch);
+}
+glitch();
+</script>
 
 </body>
 </html>
