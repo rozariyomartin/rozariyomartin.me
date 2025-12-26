@@ -1,28 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <title>CTF Writeup</title>
 
-    <link rel="stylesheet" href="../css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Markdown styling -->
-    <style>
-        .markdown img { max-width: 100%; border-radius: 8px; }
-        .markdown pre { background: #0a0a0a; padding: 1rem; overflow-x: auto; }
-        .markdown code { color: #00ff00; }
-    </style>
+    <!-- Tailwind + Fonts -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <!-- Your main CSS -->
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 
-<body class="bg-black text-gray-200 px-6 py-12">
+<body class="overflow-x-hidden">
 
-<a href="../index.html#authored"
-   class="text-green-400 hover:underline mb-8 inline-block">
-← Back to Portfolio
-</a>
+<!-- Effects (same as main site) -->
+<canvas id="glitch-bg"></canvas>
+<div class="scan-lines"></div>
 
-<div id="content" class="markdown max-w-5xl mx-auto"></div>
+<div class="relative z-10 px-6 py-12 max-w-5xl mx-auto">
 
+    <a href="../index.html#authored"
+       class="text-green-400 hover:underline mb-8 inline-block font-mono">
+        ← Back to Portfolio
+    </a>
+
+    <!-- Markdown Content -->
+    <article id="content"
+             class="prose prose-invert max-w-none font-mono">
+    </article>
+
+</div>
+
+<!-- Markdown Renderer -->
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
 <script>
@@ -45,6 +59,9 @@ if (!file) {
         });
 }
 </script>
+
+<!-- Same JS as main site (glitch animation etc.) -->
+<script src="../js/script.js"></script>
 
 </body>
 </html>
