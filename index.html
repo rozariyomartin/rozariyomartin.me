@@ -1,457 +1,513 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Martin Rozariyo — Security Researcher</title>
-  <meta name="description" content="Martin Rozariyo — CTF player, security researcher, and challenge author. B.Tech student passionate about forensics and cryptography." />
+  <meta name="description"
+    content="Martin Rozariyo — CTF player, security researcher, and challenge author. B.Tech student passionate about forensics and cryptography." />
   <meta property="og:title" content="Martin Rozariyo — Security Researcher" />
-  <meta property="og:description" content="Martin Rozariyo — CTF player, security researcher, and challenge author. B.Tech student passionate about forensics and cryptography." />
+  <meta property="og:description"
+    content="Martin Rozariyo — CTF player, security researcher, and challenge author. B.Tech student passionate about forensics and cryptography." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://rozariyomartin.me/" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
 
-<header>
-  <nav>
-    <a href="#" class="nav-brand">Martin Rozariyo</a>
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#writeups">Writeups</a></li>
-      <li><a href="#credentials">Credentials</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <div class="nav-status">
-      <span class="dot"></span>
-      Open to collab
+  <header>
+    <nav>
+      <a href="#" class="nav-brand">Martin Rozariyo</a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#writeups">Writeups</a></li>
+        <li><a href="#credentials">Credentials</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="nav-status">
+        <span class="dot"></span>
+        Open to collab
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-left fade-in">
+        <div class="hero-eyebrow">CTF Player · Security Researcher · Challenge Author</div>
+        <h1>Martin<br /><em>Rozariyo</em></h1>
+        <p class="hero-desc">
+          I spend a lot of time figuring out how things break. Most of what I know didn't come from a classroom —
+          it came from CTFs, late nights reading writeups, and actually <strong>building challenges myself</strong>.
+          Focused on digital forensics and cryptography. Authored seven original challenges for L3m0nCTF 2025.
+          Documenting everything as I go.
+        </p>
+        <div class="hero-actions">
+          <a href="#writeups" class="btn btn-primary">See my writeups →</a>
+          <a href="https://github.com/rozariyomartin" target="_blank" rel="noopener" class="btn btn-secondary">GitHub
+            ↗</a>
+        </div>
+        <div class="hero-stats">
+          <div>
+            <div class="stat-num">7</div>
+            <div class="stat-label">Challenges authored</div>
+          </div>
+          <div>
+            <div class="stat-num">7+</div>
+            <div class="stat-label">CTF writeups</div>
+          </div>
+          <div>
+            <div class="stat-num">2</div>
+            <div class="stat-label">CTF events</div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="hero-card fade-in" style="transition-delay:0.1s">
+        <div class="hcard-header">
+          <div class="hcard-avatar">M</div>
+          <div class="hcard-name">Martin Rozariyo I</div>
+          <div class="hcard-handle">B.Tech</div>
+        </div>
+        <div class="hcard-body">
+          <div class="hcard-row">
+            <span class="hcard-key">Status</span>
+            <span class="hcard-val ok">● Available</span>
+          </div>
+          <div class="hcard-row">
+            <span class="hcard-key">Year</span>
+            <span class="hcard-val">B.Tech — 3rd Year</span>
+          </div>
+          <div class="hcard-row">
+            <span class="hcard-key">Focus</span>
+            <span class="hcard-val em">Forensics, Cryptography</span>
+          </div>
+          <div class="hcard-row">
+            <span class="hcard-key">CTF Author</span>
+            <span class="hcard-val">L3m0nCTF 2025</span>
+          </div>
+          <div class="hcard-row">
+            <span class="hcard-key">Last competed</span>
+            <span class="hcard-val">0xfun 2026</span>
+          </div>
+          <div class="hcard-row">
+            <span class="hcard-key">HackTheBox</span>
+            <span class="hcard-val">Active player</span>
+          </div>
+        </div>
+        <div class="hcard-footer">
+          <span>rozariyomartin.me</span>
+          <span>Coimbatore, IN</span>
+        </div>
+      </aside>
+    </section>
+
+    <!-- ABOUT -->
+    <div class="divider">
+      <hr />
     </div>
-  </nav>
-</header>
-
-<main>
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-left fade-in">
-      <div class="hero-eyebrow">CTF Player · Security Researcher · Challenge Author</div>
-      <h1>Martin<br /><em>Rozariyo</em></h1>
-      <p class="hero-desc">
-        I spend a lot of time figuring out how things break. Most of what I know didn't come from a classroom — 
-        it came from CTFs, late nights reading writeups, and actually <strong>building challenges myself</strong>. 
-        Focused on digital forensics and cryptography. Authored seven original challenges for L3m0nCTF 2025. 
-        Documenting everything as I go.
-      </p>
-      <div class="hero-actions">
-        <a href="#writeups" class="btn btn-primary">See my writeups →</a>
-        <a href="https://github.com/rozariyomartin" target="_blank" rel="noopener" class="btn btn-secondary">GitHub ↗</a>
-      </div>
-      <div class="hero-stats">
-        <div>
-          <div class="stat-num">7</div>
-          <div class="stat-label">Challenges authored</div>
+    <section class="section" id="about">
+      <p class="sec-label">01 — Background</p>
+      <h2>A bit about <em>me</em></h2>
+      <div class="about-grid">
+        <div class="about-text fade-in">
+          <p>
+            I'm <strong>Martin Rozariyo</strong>, currently in my third year of B.Tech, and I've been deep into security
+            research for a couple of years now. Most of my learning has happened outside of lectures — through CTF
+            competitions, reading security blogs, and trying to break things in controlled environments.
+          </p>
+          <p>
+            The biggest shift in my understanding came when I started <strong>writing challenges instead of just solving
+              them</strong>. For L3m0nCTF 2025, I authored seven problems across cryptography and forensics — covering
+            Enigma-style ciphers, PCAP analysis, audio steganography, and frequency-domain techniques. Building things
+            forced me to think about what actually makes a vulnerability exploitable, not just how to exploit it.
+          </p>
+          <p>
+            I document everything. My writeups try to be useful to someone who's completely stuck, not just a recap of
+            what I did. That habit has made me slower but more thorough — which I think is the right tradeoff.
+          </p>
+          <p>
+            Right now I'm working through TryHackMe's SOC pathway alongside my degree, and I'm preparing for the eJPT.
+            OSCP is on the roadmap. Eventually I want to work in offensive security — red team or vulnerability
+            research.
+          </p>
+          <div class="chips">
+            <span class="chip">Python</span>
+            <span class="chip">Linux</span>
+            <span class="chip">Wireshark</span>
+            <span class="chip">Ghidra</span>
+            <span class="chip">Burp Suite</span>
+            <span class="chip">Nmap</span>
+            <span class="chip">FFT / Signal analysis</span>
+            <span class="chip">PCAP forensics</span>
+            <span class="chip">Steganography</span>
+            <span class="chip">OSINT</span>
+            <span class="chip">Bash</span>
+            <span class="chip">Cryptanalysis</span>
+          </div>
         </div>
-        <div>
-          <div class="stat-num">7+</div>
-          <div class="stat-label">CTF writeups</div>
-        </div>
-        <div>
-          <div class="stat-num">2</div>
-          <div class="stat-label">CTF events</div>
-        </div>
-      </div>
-    </div>
-
-    <aside class="hero-card fade-in" style="transition-delay:0.1s">
-      <div class="hcard-header">
-        <div class="hcard-avatar">M</div>
-        <div class="hcard-name">Martin Rozariyo I</div>
-        <div class="hcard-handle">security-researcher.btech</div>
-      </div>
-      <div class="hcard-body">
-        <div class="hcard-row">
-          <span class="hcard-key">Status</span>
-          <span class="hcard-val ok">● Available</span>
-        </div>
-        <div class="hcard-row">
-          <span class="hcard-key">Year</span>
-          <span class="hcard-val">B.Tech — 3rd Year</span>
-        </div>
-        <div class="hcard-row">
-          <span class="hcard-key">Focus</span>
-          <span class="hcard-val em">Forensics, Cryptography</span>
-        </div>
-        <div class="hcard-row">
-          <span class="hcard-key">CTF Author</span>
-          <span class="hcard-val">L3m0nCTF 2025</span>
-        </div>
-        <div class="hcard-row">
-          <span class="hcard-key">Last competed</span>
-          <span class="hcard-val">0xfun 2026</span>
-        </div>
-        <div class="hcard-row">
-          <span class="hcard-key">HackTheBox</span>
-          <span class="hcard-val">Active player</span>
-        </div>
-      </div>
-      <div class="hcard-footer">
-        <span>rozariyomartin.me</span>
-        <span>Chennai, IN</span>
-      </div>
-    </aside>
-  </section>
-
-  <!-- ABOUT -->
-  <div class="divider"><hr /></div>
-  <section class="section" id="about">
-    <p class="sec-label">01 — Background</p>
-    <h2>A bit about <em>me</em></h2>
-    <div class="about-grid">
-      <div class="about-text fade-in">
-        <p>
-          I'm <strong>Martin Rozariyo</strong>, currently in my third year of B.Tech, and I've been deep into security research for a couple of years now. Most of my learning has happened outside of lectures — through CTF competitions, reading security blogs, and trying to break things in controlled environments.
-        </p>
-        <p>
-          The biggest shift in my understanding came when I started <strong>writing challenges instead of just solving them</strong>. For L3m0nCTF 2025, I authored seven problems across cryptography and forensics — covering Enigma-style ciphers, PCAP analysis, audio steganography, and frequency-domain techniques. Building things forced me to think about what actually makes a vulnerability exploitable, not just how to exploit it.
-        </p>
-        <p>
-          I document everything. My writeups try to be useful to someone who's completely stuck, not just a recap of what I did. That habit has made me slower but more thorough — which I think is the right tradeoff.
-        </p>
-        <p>
-          Right now I'm working through TryHackMe's SOC pathway alongside my degree, and I'm preparing for the eJPT. OSCP is on the roadmap. Eventually I want to work in offensive security — red team or vulnerability research.
-        </p>
-        <div class="chips">
-          <span class="chip">Python</span>
-          <span class="chip">Linux</span>
-          <span class="chip">Wireshark</span>
-          <span class="chip">Ghidra</span>
-          <span class="chip">Burp Suite</span>
-          <span class="chip">Nmap</span>
-          <span class="chip">FFT / Signal analysis</span>
-          <span class="chip">PCAP forensics</span>
-          <span class="chip">Steganography</span>
-          <span class="chip">OSINT</span>
-          <span class="chip">Bash</span>
-          <span class="chip">Cryptanalysis</span>
-        </div>
-      </div>
-      <div class="info-stack fade-in" style="transition-delay:0.1s">
-        <div class="ibox">
-          <div class="ibox-head">// quick info</div>
-          <div class="ibox-row"><span class="ibox-k">Location</span><span class="ibox-v">Chennai, India</span></div>
-          <div class="ibox-row"><span class="ibox-k">Education</span><span class="ibox-v">B.Tech, Year 3</span></div>
-          <div class="ibox-row"><span class="ibox-k">Main focus</span><span class="ibox-v">Forensics + Crypto</span></div>
-          <div class="ibox-row"><span class="ibox-k">Open to</span><span class="ibox-v ok">Collaboration</span></div>
-        </div>
-        <div class="ibox">
-          <div class="ibox-head">// active on</div>
-          <div class="ibox-row"><span class="ibox-k">HackTheBox</span><span class="ibox-v ok">Active</span></div>
-          <div class="ibox-row"><span class="ibox-k">TryHackMe</span><span class="ibox-v ok">Active</span></div>
-          <div class="ibox-row"><span class="ibox-k">GitHub</span><span class="ibox-v">rozariyomartin</span></div>
-        </div>
-        <div class="ibox">
-          <div class="ibox-head">// in progress</div>
-          <div class="ibox-row"><span class="ibox-k">eJPT cert</span><span class="ibox-v pending">Preparing</span></div>
-          <div class="ibox-row"><span class="ibox-k">OSCP</span><span class="ibox-v dim">Later goal</span></div>
-          <div class="ibox-row"><span class="ibox-k">Home lab</span><span class="ibox-v pending">Building</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SKILLS (dark bg) -->
-  <div class="skills-bg">
-    <section class="section" id="skills">
-      <p class="sec-label">02 — Capabilities</p>
-      <h2>What I work <em>with</em></h2>
-      <div class="skills-grid fade-in">
-        <div class="skill-cell">
-          <span class="skill-icon">🔬</span>
-          <div class="skill-name">Digital Forensics</div>
-          <ul class="skill-list">
-            <li>PCAP &amp; network traffic analysis</li>
-            <li>Audio forensics &amp; FFT</li>
-            <li>Steganography (LSB, bitplanes)</li>
-            <li>Email &amp; log investigation</li>
-            <li>File carving &amp; metadata</li>
-          </ul>
-        </div>
-        <div class="skill-cell">
-          <span class="skill-icon">🔐</span>
-          <div class="skill-name">Cryptography</div>
-          <ul class="skill-list">
-            <li>Classical &amp; custom cipher design</li>
-            <li>Enigma / rotor cipher analysis</li>
-            <li>XOR deconstruction</li>
-            <li>Encoding chain analysis</li>
-            <li>CTF crypto challenge authoring</li>
-          </ul>
-        </div>
-        <div class="skill-cell">
-          <span class="skill-icon">🌐</span>
-          <div class="skill-name">Web Security</div>
-          <ul class="skill-list">
-            <li>Web app pentesting basics</li>
-            <li>Burp Suite interception</li>
-            <li>OWASP Top 10</li>
-            <li>Recon &amp; OSINT</li>
-            <li>API security fundamentals</li>
-          </ul>
-        </div>
-        <div class="skill-cell">
-          <span class="skill-icon">⚙️</span>
-          <div class="skill-name">Reverse Engineering</div>
-          <ul class="skill-list">
-            <li>Ghidra &amp; static analysis</li>
-            <li>x86 assembly reading</li>
-            <li>DTMF &amp; signal decoding</li>
-            <li>Hardware protocol analysis</li>
-            <li>Binary analysis basics</li>
-          </ul>
-        </div>
-        <div class="skill-cell">
-          <span class="skill-icon">🐍</span>
-          <div class="skill-name">Scripting</div>
-          <ul class="skill-list">
-            <li>Python — primary language</li>
-            <li>Bash automation</li>
-            <li>CTF tooling &amp; solve scripts</li>
-            <li>Challenge infrastructure</li>
-            <li>Git &amp; version control</li>
-          </ul>
-        </div>
-        <div class="skill-cell">
-          <span class="skill-icon">🖥️</span>
-          <div class="skill-name">Systems &amp; Network</div>
-          <ul class="skill-list">
-            <li>Linux — daily driver</li>
-            <li>TCP/IP fundamentals</li>
-            <li>Wireshark packet analysis</li>
-            <li>Nmap enumeration</li>
-            <li>HackTheBox machines</li>
-          </ul>
+        <div class="info-stack fade-in" style="transition-delay:0.1s">
+          <div class="ibox">
+            <div class="ibox-head">// quick info</div>
+            <div class="ibox-row"><span class="ibox-k">Location</span><span class="ibox-v">Coimbatore, India</span>
+            </div>
+            <div class="ibox-row"><span class="ibox-k">Education</span><span class="ibox-v">B.Tech, Year 3</span></div>
+            <div class="ibox-row"><span class="ibox-k">Main focus</span><span class="ibox-v">Forensics + Crypto</span>
+            </div>
+          </div>
+          <div class="ibox">
+            <div class="ibox-head">// active on</div>
+            <div class="ibox-row"><span class="ibox-k">HackTheBox</span><span class="ibox-v ok">Active</span></div>
+            <div class="ibox-row"><span class="ibox-k">TryHackMe</span><span class="ibox-v ok">Active</span></div>
+            <div class="ibox-row"><span class="ibox-k">GitHub</span><span class="ibox-v">rozariyomartin</span></div>
+          </div>
+          <div class="ibox">
+            <div class="ibox-head">// in progress</div>
+            <div class="ibox-row"><span class="ibox-k">PJPT cert</span><span class="ibox-v pending">Ongoing</span></div>
+            <div class="ibox-row"><span class="ibox-k">OSCP</span><span class="ibox-v dim">Later goal</span></div>
+            <div class="ibox-row"><span class="ibox-k">Home lab</span><span class="ibox-v pending">Building</span></div>
+          </div>
         </div>
       </div>
     </section>
-  </div>
 
-  <!-- WRITEUPS -->
-  <div class="divider"><hr /></div>
-  <section class="section" id="writeups">
-    <p class="sec-label">03 — Research &amp; CTFs</p>
-    <h2>Writeups &amp; <em>authored</em> challenges</h2>
-
-    <div class="writeups-grid fade-in">
-      <a class="wcard" href="https://rozariyomartin.me/writeups/view.html?file=https://raw.githubusercontent.com/rozariyomartin/CTF_Writeups/refs/heads/main/2026/0xfun/Forensics/DTMF/Writeup.md" target="_blank" rel="noopener">
-        <div class="wcard-top">
-          <span class="wcard-cat cat-forensics">Forensics</span>
-          <span class="wcard-arrow">↗</span>
-        </div>
-        <div class="wcard-title">DTMF</div>
-        <div class="wcard-desc">Audio forensics challenge — decoded DTMF tones from a provided audio file to recover hidden data. Involved frequency analysis and signal-to-data mapping.</div>
-        <div class="wcard-foot">
-          <span class="wcard-event">0xfun 2026</span>
-          <div class="wcard-tags"><span class="wcard-tag">audio</span><span class="wcard-tag">signals</span></div>
-        </div>
-      </a>
-      <a class="wcard" href="https://rozariyomartin.me/writeups/view.html?file=https://raw.githubusercontent.com/rozariyomartin/CTF_Writeups/refs/heads/main/2026/0xfun/Forensics/Ghost/Writeup.md" target="_blank" rel="noopener">
-        <div class="wcard-top">
-          <span class="wcard-cat cat-forensics">Forensics</span>
-          <span class="wcard-arrow">↗</span>
-        </div>
-        <div class="wcard-title">Ghost</div>
-        <div class="wcard-desc">File forensics — tracing hidden artifacts through metadata and file structure. Involved identifying embedded data across multiple layers of a provided archive.</div>
-        <div class="wcard-foot">
-          <span class="wcard-event">0xfun 2026</span>
-          <div class="wcard-tags"><span class="wcard-tag">files</span><span class="wcard-tag">metadata</span></div>
-        </div>
-      </a>
-      <a class="wcard" href="https://rozariyomartin.me/writeups/view.html?file=https://raw.githubusercontent.com/rozariyomartin/CTF_Writeups/refs/heads/main/2026/0xfun/Forensics/Tesla/Writeup.md" target="_blank" rel="noopener">
-        <div class="wcard-top">
-          <span class="wcard-cat cat-forensics">Forensics</span>
-          <span class="wcard-arrow">↗</span>
-        </div>
-        <div class="wcard-title">Tesla</div>
-        <div class="wcard-desc">Frequency domain challenge — applied FFT to extract information encoded in an electromagnetic signal representation. Interesting intersection of signal processing and forensics.</div>
-        <div class="wcard-foot">
-          <span class="wcard-event">0xfun 2026</span>
-          <div class="wcard-tags"><span class="wcard-tag">FFT</span><span class="wcard-tag">signals</span></div>
-        </div>
-      </a>
-      <a class="wcard" href="https://rozariyomartin.me/writeups/view.html?file=https://raw.githubusercontent.com/rozariyomartin/CTF_Writeups/refs/heads/main/2026/0xfun/Hardware/DigitalTransition/writeup.md" target="_blank" rel="noopener">
-        <div class="wcard-top">
-          <span class="wcard-cat cat-hardware">Hardware</span>
-          <span class="wcard-arrow">↗</span>
-        </div>
-        <div class="wcard-title">DigitalTransition</div>
-        <div class="wcard-desc">Hardware logic challenge — decoded a digital protocol from raw waveform transition data. Required understanding of signal timing and state transitions.</div>
-        <div class="wcard-foot">
-          <span class="wcard-event">0xfun 2026</span>
-          <div class="wcard-tags"><span class="wcard-tag">hardware</span><span class="wcard-tag">logic</span></div>
-        </div>
-      </a>
-    </div>
-
-    <div class="authored-block fade-in" style="transition-delay:0.08s">
-      <div class="authored-header">
-        <span class="authored-pill">authored</span>
-        <span class="authored-title">L3m0nCTF 2025 <span>— original challenges I wrote</span></span>
-      </div>
-      <div class="authored-list">
-        <a class="ci" href="https://rozariyomartin.me/writeups/view.html?file=https://raw.githubusercontent.com/rozariyomartin/L3m0nCTF2025-Writeups/main/Cryptography/InternalNotation/Readme.md" target="_blank" rel="noopener">
-          <div class="ci-cat">Cryptography</div>
-          <div class="ci-name">Internal Notation</div>
-          <div class="ci-sub">Enigma-style rotor cipher</div>
-        </a>
-        <a class="ci" href="https://rozariyomartin.me/writeups/view.html?file=https://raw.githubusercontent.com/rozariyomartin/L3m0nCTF2025-Writeups/main/Cryptography/RotatingShadows/Readme.md" target="_blank" rel="noopener">
-          <div class="ci-cat">Cryptography</div>
-          <div class="ci-name">Rotating Shadows</div>
-          <div class="ci-sub">Custom mechanical cipher</div>
-        </a>
-        <a class="ci" href="https://rozariyomartin.me/writeups/view.html?file=https://raw.githubusercontent.com/rozariyomartin/L3m0nCTF2025-Writeups/main/Forensics/LastCall/Readme.md" target="_blank" rel="noopener">
-          <div class="ci-cat">Forensics</div>
-          <div class="ci-name">Mystery Call</div>
-          <div class="ci-sub">Audio · DTMF · XOR</div>
-        </a>
-        <a class="ci" href="https://rozariyomartin.me/writeups/view.html?file=https://raw.githubusercontent.com/rozariyomartin/L3m0nCTF2025-Writeups/main/Forensics/NowhereOnTheRoad/Readme.md" target="_blank" rel="noopener">
-          <div class="ci-cat">Forensics</div>
-          <div class="ci-name">Nowhere on the Road</div>
-          <div class="ci-sub">FFT · Frequency domain</div>
-        </a>
-        <a class="ci" href="https://rozariyomartin.me/writeups/view.html?file=https://raw.githubusercontent.com/rozariyomartin/L3m0nCTF2025-Writeups/main/Forensics/TheCicadaArchives/Readme.md" target="_blank" rel="noopener">
-          <div class="ci-cat">Forensics</div>
-          <div class="ci-name">The Cicada Archives</div>
-          <div class="ci-sub">Logs · Stego · PCAP</div>
-        </a>
-        <a class="ci" href="https://rozariyomartin.me/writeups/view.html?file=https://raw.githubusercontent.com/rozariyomartin/L3m0nCTF2025-Writeups/main/Forensics/LostSignal/Readme.md" target="_blank" rel="noopener">
-          <div class="ci-cat">Forensics</div>
-          <div class="ci-name">Lost Signal</div>
-          <div class="ci-sub">Bitplanes · PRNG seed</div>
-        </a>
-        <a class="ci" href="https://rozariyomartin.me/writeups/view.html?file=https://raw.githubusercontent.com/rozariyomartin/L3m0nCTF2025-Writeups/main/Forensics/LayersOfTrust/Readme.md" target="_blank" rel="noopener">
-          <div class="ci-cat">Forensics</div>
-          <div class="ci-name">Layers of Trust</div>
-          <div class="ci-sub">Email · Crypto chain</div>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- CREDENTIALS -->
-  <div class="divider"><hr /></div>
-  <section class="section" id="credentials">
-    <p class="sec-label">04 — Credentials</p>
-    <h2>Certifications &amp; <em>platforms</em></h2>
-    <div class="certs-grid fade-in">
-      <div class="cert-card">
-        <span class="cert-badge badge-inprogress">In progress</span>
-        <div class="cert-issuer">eLearnSecurity</div>
-        <div class="cert-name">eJPT — Junior Penetration Tester</div>
-        <div class="cert-desc">Entry-level hands-on pentesting cert. Covers enumeration, basic exploitation, and reporting. My first formal cert in offensive security.</div>
-      </div>
-      <div class="cert-card">
-        <span class="cert-badge badge-active">Active</span>
-        <div class="cert-issuer">TryHackMe</div>
-        <div class="cert-name">SOC Level 1 Path</div>
-        <div class="cert-desc">Working through blue team fundamentals — SIEM, log analysis, alert triage, and incident response. Good foundation alongside the offensive stuff.</div>
-      </div>
-      <div class="cert-card">
-        <span class="cert-badge badge-planned">Planned</span>
-        <div class="cert-issuer">Offensive Security</div>
-        <div class="cert-name">OSCP</div>
-        <div class="cert-desc">Long-term goal. The industry standard for penetration testing. I'll get there after building more consistent offensive experience through labs and CTFs.</div>
-      </div>
-    </div>
-    <div class="platforms fade-in" style="transition-delay:0.1s">
-      <a class="plat" href="https://app.hackthebox.com/users/2654701" target="_blank" rel="noopener">
-        <div class="plat-ico">H</div>
-        <div>
-          <div class="plat-name">HackTheBox</div>
-          <div class="plat-handle">@rozariyomartin · ID 2654701</div>
-        </div>
-        <span class="plat-arr">→</span>
-      </a>
-      <a class="plat" href="https://github.com/rozariyomartin" target="_blank" rel="noopener">
-        <div class="plat-ico">G</div>
-        <div>
-          <div class="plat-name">GitHub</div>
-          <div class="plat-handle">rozariyomartin — writeups &amp; tools</div>
-        </div>
-        <span class="plat-arr">→</span>
-      </a>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <div class="divider"><hr /></div>
-  <section class="section" id="contact">
-    <p class="sec-label">05 — Connect</p>
-    <h2>Get in <em>touch</em></h2>
-    <div class="contact-grid">
-      <div class="fade-in">
-        <p class="contact-heading">Happy to connect — <em>seriously</em>.</p>
-        <p class="contact-desc">
-          Whether it's a CTF team looking for a forensics/crypto person, someone who wants to discuss a writeup, 
-          or an internship opportunity — feel free to reach out. I try to reply to every message.
-        </p>
-        <div class="socials">
-          <a class="social-link" href="https://github.com/rozariyomartin" target="_blank" rel="noopener">
-            <span class="sl-ico">⌥</span>
-            GitHub — rozariyomartin
-            <span class="sl-arr">↗</span>
-          </a>
-          <a class="social-link" href="https://www.linkedin.com/in/martin-rozariyo-i-b47b6b288/" target="_blank" rel="noopener">
-            <span class="sl-ico">in</span>
-            LinkedIn — Martin Rozariyo I
-            <span class="sl-arr">↗</span>
-          </a>
-          <a class="social-link" href="https://x.com/MartinRozariyo" target="_blank" rel="noopener">
-            <span class="sl-ico">𝕏</span>
-            Twitter / X — @MartinRozariyo
-            <span class="sl-arr">↗</span>
-          </a>
-          <a class="social-link" href="https://app.hackthebox.com/users/2654701" target="_blank" rel="noopener">
-            <span class="sl-ico">⬡</span>
-            HackTheBox profile
-            <span class="sl-arr">↗</span>
-          </a>
-        </div>
-      </div>
-      <div class="fade-in" style="transition-delay:0.1s">
-        <div class="cform">
-          <div class="cform-title">Drop me a message</div>
-          <div class="frow">
-            <label class="flabel" for="c-name">Name</label>
-            <input class="finput" id="c-name" type="text" placeholder="Your name" />
+    <!-- SKILLS (dark bg) -->
+    <div class="skills-bg">
+      <section class="section" id="skills">
+        <p class="sec-label">02 — Capabilities</p>
+        <h2>What I work <em>with</em></h2>
+        <div class="skills-grid fade-in">
+          <div class="skill-cell">
+            <span class="skill-icon">🔬</span>
+            <div class="skill-name">Digital Forensics</div>
+            <ul class="skill-list">
+              <li>PCAP &amp; network traffic analysis</li>
+              <li>Audio forensics &amp; FFT</li>
+              <li>Steganography (LSB, bitplanes)</li>
+              <li>Email &amp; log investigation</li>
+              <li>File carving &amp; metadata</li>
+            </ul>
           </div>
-          <div class="frow">
-            <label class="flabel" for="c-email">Email</label>
-            <input class="finput" id="c-email" type="email" placeholder="you@example.com" />
+          <div class="skill-cell">
+            <span class="skill-icon">🔐</span>
+            <div class="skill-name">Cryptography</div>
+            <ul class="skill-list">
+              <li>Classical &amp; custom cipher design</li>
+              <li>Enigma / rotor cipher analysis</li>
+              <li>XOR deconstruction</li>
+              <li>Encoding chain analysis</li>
+              <li>CTF crypto challenge authoring</li>
+            </ul>
           </div>
-          <div class="frow">
-            <label class="flabel" for="c-msg">Message</label>
-            <textarea class="finput" id="c-msg" placeholder="What's up?"></textarea>
+          <div class="skill-cell">
+            <span class="skill-icon">🌐</span>
+            <div class="skill-name">Web Security</div>
+            <ul class="skill-list">
+              <li>Web app pentesting basics</li>
+              <li>Burp Suite interception</li>
+              <li>OWASP Top 10</li>
+              <li>Recon &amp; OSINT</li>
+              <li>API security fundamentals</li>
+            </ul>
           </div>
-          <a href="mailto:martin@rozariyomartin.me" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:4px;">
-            Send message →
+          <div class="skill-cell">
+            <span class="skill-icon">⚙️</span>
+            <div class="skill-name">Reverse Engineering</div>
+            <ul class="skill-list">
+              <li>Ghidra &amp; static analysis</li>
+              <li>x86 assembly reading</li>
+              <li>DTMF &amp; signal decoding</li>
+              <li>Hardware protocol analysis</li>
+              <li>Binary analysis basics</li>
+            </ul>
+          </div>
+          <div class="skill-cell">
+            <span class="skill-icon">🐍</span>
+            <div class="skill-name">Scripting</div>
+            <ul class="skill-list">
+              <li>Python — primary language</li>
+              <li>Bash automation</li>
+              <li>CTF tooling &amp; solve scripts</li>
+              <li>Challenge infrastructure</li>
+              <li>Git &amp; version control</li>
+            </ul>
+          </div>
+          <div class="skill-cell">
+            <span class="skill-icon">🖥️</span>
+            <div class="skill-name">Systems &amp; Network</div>
+            <ul class="skill-list">
+              <li>Linux — daily driver</li>
+              <li>TCP/IP fundamentals</li>
+              <li>Wireshark packet analysis</li>
+              <li>Nmap enumeration</li>
+              <li>HackTheBox machines</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- WRITEUPS -->
+    <div class="divider">
+      <hr />
+    </div>
+    <section class="section" id="writeups">
+      <p class="sec-label">03 — Research &amp; CTFs</p>
+      <h2>Writeups &amp; <em>authored</em> challenges</h2>
+
+      <div class="writeups-grid fade-in">
+        <a class="wcard"
+          href="https://rozariyomartin.me/writeups/view.html?file=https://raw.githubusercontent.com/rozariyomartin/CTF_Writeups/refs/heads/main/2026/0xfun/Forensics/DTMF/Writeup.md"
+          target="_blank" rel="noopener">
+          <div class="wcard-top">
+            <span class="wcard-cat cat-forensics">Forensics</span>
+            <span class="wcard-arrow">↗</span>
+          </div>
+          <div class="wcard-title">DTMF</div>
+          <div class="wcard-desc">Audio forensics challenge — decoded DTMF tones from a provided audio file to recover
+            hidden data. Involved frequency analysis and signal-to-data mapping.</div>
+          <div class="wcard-foot">
+            <span class="wcard-event">0xfun 2026</span>
+            <div class="wcard-tags"><span class="wcard-tag">audio</span><span class="wcard-tag">signals</span></div>
+          </div>
+        </a>
+        <a class="wcard"
+          href="https://rozariyomartin.me/writeups/view.html?file=https://raw.githubusercontent.com/rozariyomartin/CTF_Writeups/refs/heads/main/2026/0xfun/Forensics/Ghost/Writeup.md"
+          target="_blank" rel="noopener">
+          <div class="wcard-top">
+            <span class="wcard-cat cat-forensics">Forensics</span>
+            <span class="wcard-arrow">↗</span>
+          </div>
+          <div class="wcard-title">Ghost</div>
+          <div class="wcard-desc">File forensics — tracing hidden artifacts through metadata and file structure.
+            Involved identifying embedded data across multiple layers of a provided archive.</div>
+          <div class="wcard-foot">
+            <span class="wcard-event">0xfun 2026</span>
+            <div class="wcard-tags"><span class="wcard-tag">files</span><span class="wcard-tag">metadata</span></div>
+          </div>
+        </a>
+        <a class="wcard"
+          href="https://rozariyomartin.me/writeups/view.html?file=https://raw.githubusercontent.com/rozariyomartin/CTF_Writeups/refs/heads/main/2026/0xfun/Forensics/Tesla/Writeup.md"
+          target="_blank" rel="noopener">
+          <div class="wcard-top">
+            <span class="wcard-cat cat-forensics">Forensics</span>
+            <span class="wcard-arrow">↗</span>
+          </div>
+          <div class="wcard-title">Tesla</div>
+          <div class="wcard-desc">Frequency domain challenge — applied FFT to extract information encoded in an
+            electromagnetic signal representation. Interesting intersection of signal processing and forensics.</div>
+          <div class="wcard-foot">
+            <span class="wcard-event">0xfun 2026</span>
+            <div class="wcard-tags"><span class="wcard-tag">FFT</span><span class="wcard-tag">signals</span></div>
+          </div>
+        </a>
+        <a class="wcard"
+          href="https://rozariyomartin.me/writeups/view.html?file=https://raw.githubusercontent.com/rozariyomartin/CTF_Writeups/refs/heads/main/2026/0xfun/Hardware/DigitalTransition/writeup.md"
+          target="_blank" rel="noopener">
+          <div class="wcard-top">
+            <span class="wcard-cat cat-hardware">Hardware</span>
+            <span class="wcard-arrow">↗</span>
+          </div>
+          <div class="wcard-title">DigitalTransition</div>
+          <div class="wcard-desc">Hardware logic challenge — decoded a digital protocol from raw waveform transition
+            data. Required understanding of signal timing and state transitions.</div>
+          <div class="wcard-foot">
+            <span class="wcard-event">0xfun 2026</span>
+            <div class="wcard-tags"><span class="wcard-tag">hardware</span><span class="wcard-tag">logic</span></div>
+          </div>
+        </a>
+      </div>
+
+      <div class="authored-block fade-in" style="transition-delay:0.08s">
+        <div class="authored-header">
+          <span class="authored-pill">authored</span>
+          <span class="authored-title">L3m0nCTF 2025 <span>— original challenges I wrote</span></span>
+        </div>
+        <div class="authored-list">
+          <a class="ci"
+            href="https://rozariyomartin.me/writeups/view.html?file=https://raw.githubusercontent.com/rozariyomartin/L3m0nCTF2025-Writeups/main/Cryptography/InternalNotation/Readme.md"
+            target="_blank" rel="noopener">
+            <div class="ci-cat">Cryptography</div>
+            <div class="ci-name">Internal Notation</div>
+            <div class="ci-sub">Enigma-style rotor cipher</div>
+          </a>
+          <a class="ci"
+            href="https://rozariyomartin.me/writeups/view.html?file=https://raw.githubusercontent.com/rozariyomartin/L3m0nCTF2025-Writeups/main/Cryptography/RotatingShadows/Readme.md"
+            target="_blank" rel="noopener">
+            <div class="ci-cat">Cryptography</div>
+            <div class="ci-name">Rotating Shadows</div>
+            <div class="ci-sub">Custom mechanical cipher</div>
+          </a>
+          <a class="ci"
+            href="https://rozariyomartin.me/writeups/view.html?file=https://raw.githubusercontent.com/rozariyomartin/L3m0nCTF2025-Writeups/main/Forensics/LastCall/Readme.md"
+            target="_blank" rel="noopener">
+            <div class="ci-cat">Forensics</div>
+            <div class="ci-name">Mystery Call</div>
+            <div class="ci-sub">Audio · DTMF · XOR</div>
+          </a>
+          <a class="ci"
+            href="https://rozariyomartin.me/writeups/view.html?file=https://raw.githubusercontent.com/rozariyomartin/L3m0nCTF2025-Writeups/main/Forensics/NowhereOnTheRoad/Readme.md"
+            target="_blank" rel="noopener">
+            <div class="ci-cat">Forensics</div>
+            <div class="ci-name">Nowhere on the Road</div>
+            <div class="ci-sub">FFT · Frequency domain</div>
+          </a>
+          <a class="ci"
+            href="https://rozariyomartin.me/writeups/view.html?file=https://raw.githubusercontent.com/rozariyomartin/L3m0nCTF2025-Writeups/main/Forensics/TheCicadaArchives/Readme.md"
+            target="_blank" rel="noopener">
+            <div class="ci-cat">Forensics</div>
+            <div class="ci-name">The Cicada Archives</div>
+            <div class="ci-sub">Logs · Stego · PCAP</div>
+          </a>
+          <a class="ci"
+            href="https://rozariyomartin.me/writeups/view.html?file=https://raw.githubusercontent.com/rozariyomartin/L3m0nCTF2025-Writeups/main/Forensics/LostSignal/Readme.md"
+            target="_blank" rel="noopener">
+            <div class="ci-cat">Forensics</div>
+            <div class="ci-name">Lost Signal</div>
+            <div class="ci-sub">Bitplanes · PRNG seed</div>
+          </a>
+          <a class="ci"
+            href="https://rozariyomartin.me/writeups/view.html?file=https://raw.githubusercontent.com/rozariyomartin/L3m0nCTF2025-Writeups/main/Forensics/LayersOfTrust/Readme.md"
+            target="_blank" rel="noopener">
+            <div class="ci-cat">Forensics</div>
+            <div class="ci-name">Layers of Trust</div>
+            <div class="ci-sub">Email · Crypto chain</div>
           </a>
         </div>
       </div>
+    </section>
+
+    <!-- CREDENTIALS -->
+    <div class="divider">
+      <hr />
     </div>
-  </section>
-</main>
+    <section class="section" id="credentials">
+      <p class="sec-label">04 — Credentials</p>
+      <h2>Certifications &amp; <em>platforms</em></h2>
+      <div class="certs-grid fade-in">
+        <div class="cert-card">
+          <span class="cert-badge badge-inprogress">In progress</span>
+          <div class="cert-issuer">eLearnSecurity</div>
+          <div class="cert-name">eJPT — Junior Penetration Tester</div>
+          <div class="cert-desc">Entry-level hands-on pentesting cert. Covers enumeration, basic exploitation, and
+            reporting. My first formal cert in offensive security.</div>
+        </div>
+        <div class="cert-card">
+          <span class="cert-badge badge-active">Active</span>
+          <div class="cert-issuer">TryHackMe</div>
+          <div class="cert-name">SOC Level 1 Path</div>
+          <div class="cert-desc">Working through blue team fundamentals — SIEM, log analysis, alert triage, and incident
+            response. Good foundation alongside the offensive stuff.</div>
+        </div>
+        <div class="cert-card">
+          <span class="cert-badge badge-planned">Planned</span>
+          <div class="cert-issuer">Offensive Security</div>
+          <div class="cert-name">OSCP</div>
+          <div class="cert-desc">Long-term goal. The industry standard for penetration testing. I'll get there after
+            building more consistent offensive experience through labs and CTFs.</div>
+        </div>
+      </div>
+      <div class="platforms fade-in" style="transition-delay:0.1s">
+        <a class="plat" href="https://app.hackthebox.com/users/2654701" target="_blank" rel="noopener">
+          <div class="plat-ico">H</div>
+          <div>
+            <div class="plat-name">HackTheBox</div>
+            <div class="plat-handle">@rozariyomartin · ID 2654701</div>
+          </div>
+          <span class="plat-arr">→</span>
+        </a>
+        <a class="plat" href="https://github.com/rozariyomartin" target="_blank" rel="noopener">
+          <div class="plat-ico">G</div>
+          <div>
+            <div class="plat-name">GitHub</div>
+            <div class="plat-handle">rozariyomartin — writeups &amp; tools</div>
+          </div>
+          <span class="plat-arr">→</span>
+        </a>
+      </div>
+    </section>
 
-<footer>
-  <div class="footer-inner">
-    <div class="footer-brand">Martin Rozariyo</div>
-    <div class="footer-copy">© 2025 · All rights reserved</div>
-    <div class="footer-domain">rozariyomartin.me</div>
-  </div>
-</footer>
+    <!-- CONTACT -->
+    <div class="divider">
+      <hr />
+    </div>
+    <section class="section" id="contact">
+      <p class="sec-label">05 — Connect</p>
+      <h2>Get in <em>touch</em></h2>
+      <div class="contact-grid">
+        <div class="fade-in">
+          <p class="contact-heading">Happy to connect — <em>seriously</em>.</p>
+          <p class="contact-desc">
+            Whether it's a CTF team looking for a forensics/crypto person, someone who wants to discuss a writeup,
+            or an internship opportunity — feel free to reach out. I try to reply to every message.
+          </p>
+          <div class="socials">
+            <a class="social-link" href="https://github.com/rozariyomartin" target="_blank" rel="noopener">
+              <span class="sl-ico">⌥</span>
+              GitHub — rozariyomartin
+              <span class="sl-arr">↗</span>
+            </a>
+            <a class="social-link" href="https://www.linkedin.com/in/martin-rozariyo-i-b47b6b288/" target="_blank"
+              rel="noopener">
+              <span class="sl-ico">in</span>
+              LinkedIn — Martin Rozariyo I
+              <span class="sl-arr">↗</span>
+            </a>
+            <a class="social-link" href="https://x.com/MartinRozariyo" target="_blank" rel="noopener">
+              <span class="sl-ico">𝕏</span>
+              Twitter / X — @MartinRozariyo
+              <span class="sl-arr">↗</span>
+            </a>
+            <a class="social-link" href="https://app.hackthebox.com/users/2654701" target="_blank" rel="noopener">
+              <span class="sl-ico">⬡</span>
+              HackTheBox profile
+              <span class="sl-arr">↗</span>
+            </a>
+          </div>
+        </div>
+        <div class="fade-in" style="transition-delay:0.1s">
+          <div class="cform">
+            <div class="cform-title">Drop me a message</div>
+            <div class="frow">
+              <label class="flabel" for="c-name">Name</label>
+              <input class="finput" id="c-name" type="text" placeholder="Your name" />
+            </div>
+            <div class="frow">
+              <label class="flabel" for="c-email">Email</label>
+              <input class="finput" id="c-email" type="email" placeholder="you@example.com" />
+            </div>
+            <div class="frow">
+              <label class="flabel" for="c-msg">Message</label>
+              <textarea class="finput" id="c-msg" placeholder="What's up?"></textarea>
+            </div>
+            <a href="mailto:martin@rozariyomartin.me" class="btn btn-primary"
+              style="width:100%;justify-content:center;margin-top:4px;">
+              Send message →
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
-<script defer src="script.js"></script>
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">Martin Rozariyo</div>
+      <div class="footer-copy">© 2025 · All rights reserved</div>
+      <div class="footer-domain">rozariyomartin.me</div>
+    </div>
+  </footer>
+
+  <script defer src="js/script.js"></script>
 
 </body>
+
 </html>
