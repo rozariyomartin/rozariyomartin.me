@@ -1,361 +1,457 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Martin Rozariyo I</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Martin Rozariyo — Security Researcher</title>
+  <meta name="description" content="Martin Rozariyo — CTF player, security researcher, and challenge author. B.Tech student passionate about forensics and cryptography." />
+  <meta property="og:title" content="Martin Rozariyo — Security Researcher" />
+  <meta property="og:description" content="Martin Rozariyo — CTF player, security researcher, and challenge author. B.Tech student passionate about forensics and cryptography." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://rozariyomartin.me/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body class="overflow-x-hidden">
+<body>
 
-    <canvas id="glitch-bg"></canvas>
-    <div class="scan-lines"></div>
+<header>
+  <nav>
+    <a href="#" class="nav-brand">Martin Rozariyo</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#writeups">Writeups</a></li>
+      <li><a href="#credentials">Credentials</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-status">
+      <span class="dot"></span>
+      Open to collab
+    </div>
+  </nav>
+</header>
 
-    <!-- Pre-loader Screen -->
-    <div id="preloader">
-        <div class="loader-text">[Initializing system...]</div>
-        <div class="loader-bar"></div>
-        <div class="loader-text">[Loading assets...]</div>
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-left fade-in">
+      <div class="hero-eyebrow">CTF Player · Security Researcher · Challenge Author</div>
+      <h1>Martin<br /><em>Rozariyo</em></h1>
+      <p class="hero-desc">
+        I spend a lot of time figuring out how things break. Most of what I know didn't come from a classroom — 
+        it came from CTFs, late nights reading writeups, and actually <strong>building challenges myself</strong>. 
+        Focused on digital forensics and cryptography. Authored seven original challenges for L3m0nCTF 2025. 
+        Documenting everything as I go.
+      </p>
+      <div class="hero-actions">
+        <a href="#writeups" class="btn btn-primary">See my writeups →</a>
+        <a href="https://github.com/rozariyomartin" target="_blank" rel="noopener" class="btn btn-secondary">GitHub ↗</a>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <div class="stat-num">7</div>
+          <div class="stat-label">Challenges authored</div>
+        </div>
+        <div>
+          <div class="stat-num">7+</div>
+          <div class="stat-label">CTF writeups</div>
+        </div>
+        <div>
+          <div class="stat-num">2</div>
+          <div class="stat-label">CTF events</div>
+        </div>
+      </div>
     </div>
 
-    <!-- Main Content Wrapper -->
-    <div id="main-content" class="opacity-0 transition-opacity duration-1000">
-        
-        <!-- Header and Navigation -->
-        <header class="fixed top-0 left-0 w-full z-50 bg-black/30 backdrop-blur-md border-b border-gray-800/50">
-            <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-                <a href="#home" class="text-2xl font-bold font-orbitron text-white">R0z4r1y0</a>
-                <div class="hidden md:flex space-x-8">
-                    <a href="#home" class="nav-link text-gray-300">/home</a>
-                    <a href="#about" class="nav-link text-gray-300">/about</a>
-                    <a href="#writeups" class="nav-link text-gray-300">/writeups</a>
-                    <a href="#projects" class="nav-link text-gray-300">/projects</a>
-                    <a href="#authored" class="nav-link text-gray-300">/authored</a>
-                    <a href="#contact" class="nav-link text-gray-300">/contact</a>
-                </div>
-                 <!-- Mobile Menu Button -->
-                <button id="mobile-menu-btn" class="md:hidden text-white">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-                </button>
-            </nav>
-            <!-- Mobile Menu -->
-            <div id="mobile-menu" class="hidden md:hidden bg-black/50">
-                <a href="#home" class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-800">/home</a>
-                <a href="#about" class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-800">/about</a>
-                <a href="#writeups" class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-800">/writeups</a>
-                <a href="#projects" class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-800">/projects</a>
-                <a href="#contact" class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-800">/contact</a>
-            </div>
-        </header>
+    <aside class="hero-card fade-in" style="transition-delay:0.1s">
+      <div class="hcard-header">
+        <div class="hcard-avatar">M</div>
+        <div class="hcard-name">Martin Rozariyo I</div>
+        <div class="hcard-handle">security-researcher.btech</div>
+      </div>
+      <div class="hcard-body">
+        <div class="hcard-row">
+          <span class="hcard-key">Status</span>
+          <span class="hcard-val ok">● Available</span>
+        </div>
+        <div class="hcard-row">
+          <span class="hcard-key">Year</span>
+          <span class="hcard-val">B.Tech — 3rd Year</span>
+        </div>
+        <div class="hcard-row">
+          <span class="hcard-key">Focus</span>
+          <span class="hcard-val em">Forensics, Cryptography</span>
+        </div>
+        <div class="hcard-row">
+          <span class="hcard-key">CTF Author</span>
+          <span class="hcard-val">L3m0nCTF 2025</span>
+        </div>
+        <div class="hcard-row">
+          <span class="hcard-key">Last competed</span>
+          <span class="hcard-val">0xfun 2026</span>
+        </div>
+        <div class="hcard-row">
+          <span class="hcard-key">HackTheBox</span>
+          <span class="hcard-val">Active player</span>
+        </div>
+      </div>
+      <div class="hcard-footer">
+        <span>rozariyomartin.me</span>
+        <span>Chennai, IN</span>
+      </div>
+    </aside>
+  </section>
 
-        <!-- Hero Section -->
-        <section id="home" class="min-h-screen flex items-center justify-center text-center px-4">
-            <div class="w-full max-w-4xl">
-                <h1 class="glitch text-4xl md:text-6xl lg:text-8xl" data-text="Martin Rozariyo I">
-                    Martin Rozariyo I
-                </h1>
-                <p id="typewriter" class="mt-4 text-lg md:text-xl lg:text-2xl text-green-400 max-w-2xl mx-auto">
-                    CTF Player & Security Researcher
-                </p>
-            </div>
-        </section>
+  <!-- ABOUT -->
+  <div class="divider"><hr /></div>
+  <section class="section" id="about">
+    <p class="sec-label">01 — Background</p>
+    <h2>A bit about <em>me</em></h2>
+    <div class="about-grid">
+      <div class="about-text fade-in">
+        <p>
+          I'm <strong>Martin Rozariyo</strong>, currently in my third year of B.Tech, and I've been deep into security research for a couple of years now. Most of my learning has happened outside of lectures — through CTF competitions, reading security blogs, and trying to break things in controlled environments.
+        </p>
+        <p>
+          The biggest shift in my understanding came when I started <strong>writing challenges instead of just solving them</strong>. For L3m0nCTF 2025, I authored seven problems across cryptography and forensics — covering Enigma-style ciphers, PCAP analysis, audio steganography, and frequency-domain techniques. Building things forced me to think about what actually makes a vulnerability exploitable, not just how to exploit it.
+        </p>
+        <p>
+          I document everything. My writeups try to be useful to someone who's completely stuck, not just a recap of what I did. That habit has made me slower but more thorough — which I think is the right tradeoff.
+        </p>
+        <p>
+          Right now I'm working through TryHackMe's SOC pathway alongside my degree, and I'm preparing for the eJPT. OSCP is on the roadmap. Eventually I want to work in offensive security — red team or vulnerability research.
+        </p>
+        <div class="chips">
+          <span class="chip">Python</span>
+          <span class="chip">Linux</span>
+          <span class="chip">Wireshark</span>
+          <span class="chip">Ghidra</span>
+          <span class="chip">Burp Suite</span>
+          <span class="chip">Nmap</span>
+          <span class="chip">FFT / Signal analysis</span>
+          <span class="chip">PCAP forensics</span>
+          <span class="chip">Steganography</span>
+          <span class="chip">OSINT</span>
+          <span class="chip">Bash</span>
+          <span class="chip">Cryptanalysis</span>
+        </div>
+      </div>
+      <div class="info-stack fade-in" style="transition-delay:0.1s">
+        <div class="ibox">
+          <div class="ibox-head">// quick info</div>
+          <div class="ibox-row"><span class="ibox-k">Location</span><span class="ibox-v">Chennai, India</span></div>
+          <div class="ibox-row"><span class="ibox-k">Education</span><span class="ibox-v">B.Tech, Year 3</span></div>
+          <div class="ibox-row"><span class="ibox-k">Main focus</span><span class="ibox-v">Forensics + Crypto</span></div>
+          <div class="ibox-row"><span class="ibox-k">Open to</span><span class="ibox-v ok">Collaboration</span></div>
+        </div>
+        <div class="ibox">
+          <div class="ibox-head">// active on</div>
+          <div class="ibox-row"><span class="ibox-k">HackTheBox</span><span class="ibox-v ok">Active</span></div>
+          <div class="ibox-row"><span class="ibox-k">TryHackMe</span><span class="ibox-v ok">Active</span></div>
+          <div class="ibox-row"><span class="ibox-k">GitHub</span><span class="ibox-v">rozariyomartin</span></div>
+        </div>
+        <div class="ibox">
+          <div class="ibox-head">// in progress</div>
+          <div class="ibox-row"><span class="ibox-k">eJPT cert</span><span class="ibox-v pending">Preparing</span></div>
+          <div class="ibox-row"><span class="ibox-k">OSCP</span><span class="ibox-v dim">Later goal</span></div>
+          <div class="ibox-row"><span class="ibox-k">Home lab</span><span class="ibox-v pending">Building</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <!-- About Section -->
-        <section id="about" class="py-20 px-4 container mx-auto bg-black/20">
-            <h2 class="text-4xl font-bold text-center mb-16 reveal">./About_Me</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-center">
-                <!-- Image Column -->
-                <div class="md:col-span-1 flex justify-center reveal">
-                     <div class="relative w-64 h-64 rounded-full overflow-hidden border-2 border-green-500/50 p-1 shadow-[0_0_25px_rgba(0,255,0,0.3)]">
-                        <img src="https://placehold.co/256x256/010101/00ff00?text=USER" alt="Your Profile Picture" class="rounded-full w-full h-full object-cover">
-                     </div>
-                </div>
-                <!-- Text Column -->
-                <div class="md:col-span-2 reveal" style="transition-delay: 100ms;">
-                    <p class="text-lg text-gray-300 mb-6">
-                        Hello! I'm Martin Rozariyo, a passionate cybersecurity professional with a knack for breaking things to make them better. My journey into the digital world began with a simple curiosity about how systems work, which quickly evolved into a deep-seated drive to understand and mitigate security vulnerabilities. I thrive on the challenge of dissecting complex systems, uncovering hidden weaknesses, and developing robust defenses.
-                    </p>
-                    <p class="text-gray-400">
-                        This portfolio is a terminal into my world, showcasing a collection of my projects, research, and writeups from various CTFs and personal explorations. My goal is to continuously learn, share knowledge, and contribute to a more secure digital future.
-                    </p>
-                </div>
-            </div>
-            <!-- Skills subsection -->
-            <div class="mt-20 reveal">
-                 <h3 class="text-3xl font-bold text-center mb-10">Core Skillset</h3>
-                 <div class="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
-                    <span class="skill-tag">Web Application Pentesting</span>
-                    <span class="skill-tag">Network Security</span>
-                    <span class="skill-tag">Reverse Engineering</span>
-                    <span class="skill-tag">Python Scripting</span>
-                    <span class="skill-tag">Linux/Unix Systems</span>
-                    <span class="skill-tag">Threat Analysis</span>
-                    <span class="skill-tag">Cryptography</span>
-                    <span class="skill-tag">Forensics</span>
-                 </div>
-            </div>
-        </section>
+  <!-- SKILLS (dark bg) -->
+  <div class="skills-bg">
+    <section class="section" id="skills">
+      <p class="sec-label">02 — Capabilities</p>
+      <h2>What I work <em>with</em></h2>
+      <div class="skills-grid fade-in">
+        <div class="skill-cell">
+          <span class="skill-icon">🔬</span>
+          <div class="skill-name">Digital Forensics</div>
+          <ul class="skill-list">
+            <li>PCAP &amp; network traffic analysis</li>
+            <li>Audio forensics &amp; FFT</li>
+            <li>Steganography (LSB, bitplanes)</li>
+            <li>Email &amp; log investigation</li>
+            <li>File carving &amp; metadata</li>
+          </ul>
+        </div>
+        <div class="skill-cell">
+          <span class="skill-icon">🔐</span>
+          <div class="skill-name">Cryptography</div>
+          <ul class="skill-list">
+            <li>Classical &amp; custom cipher design</li>
+            <li>Enigma / rotor cipher analysis</li>
+            <li>XOR deconstruction</li>
+            <li>Encoding chain analysis</li>
+            <li>CTF crypto challenge authoring</li>
+          </ul>
+        </div>
+        <div class="skill-cell">
+          <span class="skill-icon">🌐</span>
+          <div class="skill-name">Web Security</div>
+          <ul class="skill-list">
+            <li>Web app pentesting basics</li>
+            <li>Burp Suite interception</li>
+            <li>OWASP Top 10</li>
+            <li>Recon &amp; OSINT</li>
+            <li>API security fundamentals</li>
+          </ul>
+        </div>
+        <div class="skill-cell">
+          <span class="skill-icon">⚙️</span>
+          <div class="skill-name">Reverse Engineering</div>
+          <ul class="skill-list">
+            <li>Ghidra &amp; static analysis</li>
+            <li>x86 assembly reading</li>
+            <li>DTMF &amp; signal decoding</li>
+            <li>Hardware protocol analysis</li>
+            <li>Binary analysis basics</li>
+          </ul>
+        </div>
+        <div class="skill-cell">
+          <span class="skill-icon">🐍</span>
+          <div class="skill-name">Scripting</div>
+          <ul class="skill-list">
+            <li>Python — primary language</li>
+            <li>Bash automation</li>
+            <li>CTF tooling &amp; solve scripts</li>
+            <li>Challenge infrastructure</li>
+            <li>Git &amp; version control</li>
+          </ul>
+        </div>
+        <div class="skill-cell">
+          <span class="skill-icon">🖥️</span>
+          <div class="skill-name">Systems &amp; Network</div>
+          <ul class="skill-list">
+            <li>Linux — daily driver</li>
+            <li>TCP/IP fundamentals</li>
+            <li>Wireshark packet analysis</li>
+            <li>Nmap enumeration</li>
+            <li>HackTheBox machines</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </div>
 
-        <section id="authored" class="py-20 px-4 container mx-auto bg-black/20">
-            <h2 class="text-4xl font-bold text-center mb-12 reveal">./Authored_Challenges</h2>
+  <!-- WRITEUPS -->
+  <div class="divider"><hr /></div>
+  <section class="section" id="writeups">
+    <p class="sec-label">03 — Research &amp; CTFs</p>
+    <h2>Writeups &amp; <em>authored</em> challenges</h2>
 
-            <p class="max-w-2xl mx-auto text-center text-gray-400 mb-12 reveal">
-                Original Capture The Flag challenges authored for <strong>L3m0nCTF 2025</strong>.
-                Click any challenge to read the full writeup directly on this site.
-            </p>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-                <!-- Internal Notation -->
-                <div class="card p-6 rounded-lg reveal">
-                    <h3 class="text-xl font-bold text-green-400 mb-2">
-                        Internal Notation
-                    </h3>
-                    <p class="text-sm text-gray-400 mb-3">
-                        Cryptography · Enigma-style rotor cipher
-                    </p>
-                    <span class="inline-block bg-gray-700 text-green-300 text-xs font-semibold px-2.5 py-0.5 rounded-full">
-                        L3m0nCTF 2025
-                    </span>
-                    <a href="writeups/view.html?file=https://raw.githubusercontent.com/rozariyomartin/L3m0nCTF2025-Writeups/main/Cryptography/InternalNotation/Readme.md"
-                    class="block mt-4 text-green-400 hover:underline">
-                        Read Writeup →
-                    </a>
-                </div>
-
-                <!-- Rotating Shadows -->
-                <div class="card p-6 rounded-lg reveal">
-                    <h3 class="text-xl font-bold text-green-400 mb-2">
-                        Rotating Shadows
-                    </h3>
-                    <p class="text-sm text-gray-400 mb-3">
-                        Cryptography · Custom mechanical cipher
-                    </p>
-                    <span class="inline-block bg-gray-700 text-green-300 text-xs font-semibold px-2.5 py-0.5 rounded-full">
-                        L3m0nCTF 2025
-                    </span>
-                    <a href="writeups/view.html?file=https://raw.githubusercontent.com/rozariyomartin/L3m0nCTF2025-Writeups/main/Cryptography/RotatingShadows/Readme.md"
-                    class="block mt-4 text-green-400 hover:underline">
-                        Read Writeup →
-                    </a>
-                </div>
-
-                <!-- Mystery Call -->
-                <div class="card p-6 rounded-lg reveal">
-                    <h3 class="text-xl font-bold text-green-400 mb-2">
-                        Mystery Call
-                    </h3>
-                    <p class="text-sm text-gray-400 mb-3">
-                        Forensics · Audio · DTMF · XOR
-                    </p>
-                    <span class="inline-block bg-gray-700 text-green-300 text-xs font-semibold px-2.5 py-0.5 rounded-full">
-                        L3m0nCTF 2025
-                    </span>
-                    <a href="writeups/view.html?file=https://raw.githubusercontent.com/rozariyomartin/L3m0nCTF2025-Writeups/main/Forensics/LastCall/Readme.md"
-                    class="block mt-4 text-green-400 hover:underline">
-                        Read Writeup →
-                    </a>
-                </div>
-
-                <div class="card p-6 rounded-lg reveal">
-                    <h3 class="text-xl font-bold text-green-400 mb-2">Nowhere on the Road</h3>
-                    <p class="text-sm text-gray-400 mb-3">
-                        Forensics · FFT · Frequency domain
-                    </p>
-                    <span class="inline-block bg-gray-700 text-green-300 text-xs font-semibold px-2.5 py-0.5 rounded-full">
-                        L3m0nCTF 2025
-                    </span>
-                    <a href="writeups/view.html?file=https://raw.githubusercontent.com/rozariyomartin/L3m0nCTF2025-Writeups/main/Forensics/NowhereOnTheRoad/Readme.md"
-                       class="block mt-4 text-green-400 hover:underline">
-                        Read Writeup →
-                    </a>
-                </div>
-
-                <div class="card p-6 rounded-lg reveal">
-                    <h3 class="text-xl font-bold text-green-400 mb-2">The Cicada Archives</h3>
-                    <p class="text-sm text-gray-400 mb-3">
-                        Forensics · Logs · Stego · PCAP
-                    </p>
-                    <span class="inline-block bg-gray-700 text-green-300 text-xs font-semibold px-2.5 py-0.5 rounded-full">
-                        L3m0nCTF 2025
-                    </span>
-                    <a href="writeups/view.html?file=https://raw.githubusercontent.com/rozariyomartin/L3m0nCTF2025-Writeups/main/Forensics/TheCicadaArchives/Readme.md"
-                       class="block mt-4 text-green-400 hover:underline">
-                        Read Writeup →
-                    </a>
-                </div>
-
-                <div class="card p-6 rounded-lg reveal">
-                    <h3 class="text-xl font-bold text-green-400 mb-2">Lost Signal</h3>
-                    <p class="text-sm text-gray-400 mb-3">
-                        Forensics · Bitplanes · PRNG seed
-                    </p>
-                    <span class="inline-block bg-gray-700 text-green-300 text-xs font-semibold px-2.5 py-0.5 rounded-full">
-                        L3m0nCTF 2025
-                    </span>
-                    <a href="writeups/view.html?file=https://raw.githubusercontent.com/rozariyomartin/L3m0nCTF2025-Writeups/main/Forensics/LostSignal/Readme.md"
-                       class="block mt-4 text-green-400 hover:underline">
-                        Read Writeup →
-                    </a>
-                </div>
-
-                <div class="card p-6 rounded-lg reveal">
-                    <h3 class="text-xl font-bold text-green-400 mb-2">Layers of Trust</h3>
-                    <p class="text-sm text-gray-400 mb-3">
-                        Forensics · Email · Crypto chain
-                    </p>
-                    <span class="inline-block bg-gray-700 text-green-300 text-xs font-semibold px-2.5 py-0.5 rounded-full">
-                        L3m0nCTF 2025
-                    </span>
-                    <a href="writeups/view.html?file=https://raw.githubusercontent.com/rozariyomartin/L3m0nCTF2025-Writeups/main/Forensics/LayersOfTrust/Readme.md"
-                       class="block mt-4 text-green-400 hover:underline">
-                        Read Writeup →
-                    </a>
-                </div>
-
-                
-
-                
-                
-            </div>
-        </section>
-
-
-
-        <!-- Writeups Section -->
-        <section id="writeups" class="py-20 px-4 container mx-auto text-center">
-            <h2 class="text-4xl font-bold mb-12 reveal">./Latest_Writeups</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="card p-6 rounded-lg reveal">
-                <h3 class="text-xl font-bold text-green-400 mb-2">DTMF</h3>
-                <p class="text-sm text-gray-400 mb-3">
-                    Forensics
-                </p>
-                <span class="inline-block bg-gray-700 text-green-300 text-xs font-semibold px-2.5 py-0.5 rounded-full">
-                        0xfun 2026
-                </span>
-                <a href="writeups/view.html?file=https://raw.githubusercontent.com/rozariyomartin/CTF_Writeups/refs/heads/main/2026/0xfun/Forensics/DTMF/Writeup.md"
-                    class="block mt-4 text-green-400 hover:underline">
-                    Read Writeup →
-                </a>
-            </div>
-
-            <div class="card p-6 rounded-lg reveal">
-                <h3 class="text-xl font-bold text-green-400 mb-2">Ghost</h3>
-                <p class="text-sm text-gray-400 mb-3">
-                    Forensics
-                </p>
-                <span class="inline-block bg-gray-700 text-green-300 text-xs font-semibold px-2.5 py-0.5 rounded-full">
-                        0xfun 2026
-                </span>
-                <a href="writeups/view.html?file=https://raw.githubusercontent.com/rozariyomartin/CTF_Writeups/refs/heads/main/2026/0xfun/Forensics/Ghost/Writeup.md"
-                    class="block mt-4 text-green-400 hover:underline">
-                    Read Writeup →
-                </a>
-            </div>
-
-            <div class="card p-6 rounded-lg reveal">
-                <h3 class="text-xl font-bold text-green-400 mb-2">NothingExpected</h3>
-                <p class="text-sm text-gray-400 mb-3">
-                    Forensics
-                </p>
-                <span class="inline-block bg-gray-700 text-green-300 text-xs font-semibold px-2.5 py-0.5 rounded-full">
-                        0xfun 2026
-                </span>
-                <a href="writeups/view.html?file=https://raw.githubusercontent.com/rozariyomartin/CTF_Writeups/refs/heads/main/2026/0xfun/Forensics/NothingExpected/Writeup.md"
-                    class="block mt-4 text-green-400 hover:underline">
-                    Read Writeup →
-                </a>
-            </div>
-
-            <div class="card p-6 rounded-lg reveal">
-                <h3 class="text-xl font-bold text-green-400 mb-2">Tesla</h3>
-                <p class="text-sm text-gray-400 mb-3">
-                    Forensics
-                </p>
-                <span class="inline-block bg-gray-700 text-green-300 text-xs font-semibold px-2.5 py-0.5 rounded-full">
-                        0xfun 2026
-                </span>
-                <a href="writeups/view.html?file=https://raw.githubusercontent.com/rozariyomartin/CTF_Writeups/refs/heads/main/2026/0xfun/Forensics/Tesla/Writeup.md"
-                    class="block mt-4 text-green-400 hover:underline">
-                    Read Writeup →
-                </a>
-            </div>
-
-            <div class="card p-6 rounded-lg reveal">
-                <h3 class="text-xl font-bold text-green-400 mb-2">kd></h3>
-                <p class="text-sm text-gray-400 mb-3">
-                    Forensics
-                </p>
-                <span class="inline-block bg-gray-700 text-green-300 text-xs font-semibold px-2.5 py-0.5 rounded-full">
-                        0xfun 2026
-                </span>
-                <a href="writeups/view.html?file=https://raw.githubusercontent.com/rozariyomartin/CTF_Writeups/refs/heads/main/2026/0xfun/Forensics/kd>/Writeup.md"
-                    class="block mt-4 text-green-400 hover:underline">
-                    Read Writeup →
-                </a>
-            </div>
-
-            <div class="card p-6 rounded-lg reveal">
-                <h3 class="text-xl font-bold text-green-400 mb-2">DigitalTransition</h3>
-                <p class="text-sm text-gray-400 mb-3">
-                    Hardware
-                </p>
-                <span class="inline-block bg-gray-700 text-green-300 text-xs font-semibold px-2.5 py-0.5 rounded-full">
-                        0xfun 2026
-                </span>
-                <a href="writeups/view.html?file=https://raw.githubusercontent.com/rozariyomartin/CTF_Writeups/refs/heads/main/2026/0xfun/Hardware/DigitalTransition/writeup.md"
-                    class="block mt-4 text-green-400 hover:underline">
-                    Read Writeup →
-                </a>
-            </div>
-        </section>
-
-
-        <!-- Projects Section -->
-        <section id="projects" class="py-20 px-4 bg-black/20 text-center">
-            <div class="container mx-auto">
-                <h2 class="text-4xl font-bold mb-12 reveal">./Personal_Projects</h2>
-
-                <div class="inline-block px-8 py-4 border border-green-500/50 rounded-lg
-                            text-green-400 font-mono tracking-wider reveal
-                            shadow-[0_0_15px_rgba(0,255,0,0.25)]">
-                    🚧 COMING SOON
-                </div>
-
-                <p class="mt-6 text-sm text-gray-500 reveal">
-                    Selected projects will appear here in the future.
-                </p>
-            </div>
-        </section>
-
-
-        <!-- Contact Section -->
-        <footer id="contact" class="py-16 text-center">
-            <div class="container mx-auto px-4 reveal">
-                <h2 class="text-3xl font-bold mb-4">Connect with me</h2>
-                <p class="max-w-md mx-auto mb-8 text-gray-400">
-                    Open to collaboration and new opportunities. Let's connect and build a more secure digital world.
-                </p>
-                <div class="flex justify-center space-x-6 text-gray-400">
-                    <a href="https://github.com/rozariyomartin" class="hover:text-green-400 transition-colors duration-300">GitHub</a>
-                    <a href="https://www.linkedin.com/in/martin-rozariyo-i-b47b6b288/" class="hover:text-green-400 transition-colors duration-300">LinkedIn</a>
-                    <a href="https://x.com/MartinRozariyo" class="hover:text-green-400 transition-colors duration-300">X (Twitter)</a>
-                    <a href="https://app.hackthebox.com/users/2654701" class="hover:text-green-400 transition-colors duration-300">HackTheBox</a>
-                </div>
-                <div class="mt-12 text-sm text-gray-600">
-                    <p>&copy; 2024 Martin Rozariyo I. All rights reserved.</p>
-                    <p>Executing with 0 errors.</p>
-                </div>
-            </div>
-        </footer>
-
+    <div class="writeups-grid fade-in">
+      <a class="wcard" href="https://rozariyomartin.me/writeups/view.html?file=https://raw.githubusercontent.com/rozariyomartin/CTF_Writeups/refs/heads/main/2026/0xfun/Forensics/DTMF/Writeup.md" target="_blank" rel="noopener">
+        <div class="wcard-top">
+          <span class="wcard-cat cat-forensics">Forensics</span>
+          <span class="wcard-arrow">↗</span>
+        </div>
+        <div class="wcard-title">DTMF</div>
+        <div class="wcard-desc">Audio forensics challenge — decoded DTMF tones from a provided audio file to recover hidden data. Involved frequency analysis and signal-to-data mapping.</div>
+        <div class="wcard-foot">
+          <span class="wcard-event">0xfun 2026</span>
+          <div class="wcard-tags"><span class="wcard-tag">audio</span><span class="wcard-tag">signals</span></div>
+        </div>
+      </a>
+      <a class="wcard" href="https://rozariyomartin.me/writeups/view.html?file=https://raw.githubusercontent.com/rozariyomartin/CTF_Writeups/refs/heads/main/2026/0xfun/Forensics/Ghost/Writeup.md" target="_blank" rel="noopener">
+        <div class="wcard-top">
+          <span class="wcard-cat cat-forensics">Forensics</span>
+          <span class="wcard-arrow">↗</span>
+        </div>
+        <div class="wcard-title">Ghost</div>
+        <div class="wcard-desc">File forensics — tracing hidden artifacts through metadata and file structure. Involved identifying embedded data across multiple layers of a provided archive.</div>
+        <div class="wcard-foot">
+          <span class="wcard-event">0xfun 2026</span>
+          <div class="wcard-tags"><span class="wcard-tag">files</span><span class="wcard-tag">metadata</span></div>
+        </div>
+      </a>
+      <a class="wcard" href="https://rozariyomartin.me/writeups/view.html?file=https://raw.githubusercontent.com/rozariyomartin/CTF_Writeups/refs/heads/main/2026/0xfun/Forensics/Tesla/Writeup.md" target="_blank" rel="noopener">
+        <div class="wcard-top">
+          <span class="wcard-cat cat-forensics">Forensics</span>
+          <span class="wcard-arrow">↗</span>
+        </div>
+        <div class="wcard-title">Tesla</div>
+        <div class="wcard-desc">Frequency domain challenge — applied FFT to extract information encoded in an electromagnetic signal representation. Interesting intersection of signal processing and forensics.</div>
+        <div class="wcard-foot">
+          <span class="wcard-event">0xfun 2026</span>
+          <div class="wcard-tags"><span class="wcard-tag">FFT</span><span class="wcard-tag">signals</span></div>
+        </div>
+      </a>
+      <a class="wcard" href="https://rozariyomartin.me/writeups/view.html?file=https://raw.githubusercontent.com/rozariyomartin/CTF_Writeups/refs/heads/main/2026/0xfun/Hardware/DigitalTransition/writeup.md" target="_blank" rel="noopener">
+        <div class="wcard-top">
+          <span class="wcard-cat cat-hardware">Hardware</span>
+          <span class="wcard-arrow">↗</span>
+        </div>
+        <div class="wcard-title">DigitalTransition</div>
+        <div class="wcard-desc">Hardware logic challenge — decoded a digital protocol from raw waveform transition data. Required understanding of signal timing and state transitions.</div>
+        <div class="wcard-foot">
+          <span class="wcard-event">0xfun 2026</span>
+          <div class="wcard-tags"><span class="wcard-tag">hardware</span><span class="wcard-tag">logic</span></div>
+        </div>
+      </a>
     </div>
 
-    <script src="js/script.js"></script>
+    <div class="authored-block fade-in" style="transition-delay:0.08s">
+      <div class="authored-header">
+        <span class="authored-pill">authored</span>
+        <span class="authored-title">L3m0nCTF 2025 <span>— original challenges I wrote</span></span>
+      </div>
+      <div class="authored-list">
+        <a class="ci" href="https://rozariyomartin.me/writeups/view.html?file=https://raw.githubusercontent.com/rozariyomartin/L3m0nCTF2025-Writeups/main/Cryptography/InternalNotation/Readme.md" target="_blank" rel="noopener">
+          <div class="ci-cat">Cryptography</div>
+          <div class="ci-name">Internal Notation</div>
+          <div class="ci-sub">Enigma-style rotor cipher</div>
+        </a>
+        <a class="ci" href="https://rozariyomartin.me/writeups/view.html?file=https://raw.githubusercontent.com/rozariyomartin/L3m0nCTF2025-Writeups/main/Cryptography/RotatingShadows/Readme.md" target="_blank" rel="noopener">
+          <div class="ci-cat">Cryptography</div>
+          <div class="ci-name">Rotating Shadows</div>
+          <div class="ci-sub">Custom mechanical cipher</div>
+        </a>
+        <a class="ci" href="https://rozariyomartin.me/writeups/view.html?file=https://raw.githubusercontent.com/rozariyomartin/L3m0nCTF2025-Writeups/main/Forensics/LastCall/Readme.md" target="_blank" rel="noopener">
+          <div class="ci-cat">Forensics</div>
+          <div class="ci-name">Mystery Call</div>
+          <div class="ci-sub">Audio · DTMF · XOR</div>
+        </a>
+        <a class="ci" href="https://rozariyomartin.me/writeups/view.html?file=https://raw.githubusercontent.com/rozariyomartin/L3m0nCTF2025-Writeups/main/Forensics/NowhereOnTheRoad/Readme.md" target="_blank" rel="noopener">
+          <div class="ci-cat">Forensics</div>
+          <div class="ci-name">Nowhere on the Road</div>
+          <div class="ci-sub">FFT · Frequency domain</div>
+        </a>
+        <a class="ci" href="https://rozariyomartin.me/writeups/view.html?file=https://raw.githubusercontent.com/rozariyomartin/L3m0nCTF2025-Writeups/main/Forensics/TheCicadaArchives/Readme.md" target="_blank" rel="noopener">
+          <div class="ci-cat">Forensics</div>
+          <div class="ci-name">The Cicada Archives</div>
+          <div class="ci-sub">Logs · Stego · PCAP</div>
+        </a>
+        <a class="ci" href="https://rozariyomartin.me/writeups/view.html?file=https://raw.githubusercontent.com/rozariyomartin/L3m0nCTF2025-Writeups/main/Forensics/LostSignal/Readme.md" target="_blank" rel="noopener">
+          <div class="ci-cat">Forensics</div>
+          <div class="ci-name">Lost Signal</div>
+          <div class="ci-sub">Bitplanes · PRNG seed</div>
+        </a>
+        <a class="ci" href="https://rozariyomartin.me/writeups/view.html?file=https://raw.githubusercontent.com/rozariyomartin/L3m0nCTF2025-Writeups/main/Forensics/LayersOfTrust/Readme.md" target="_blank" rel="noopener">
+          <div class="ci-cat">Forensics</div>
+          <div class="ci-name">Layers of Trust</div>
+          <div class="ci-sub">Email · Crypto chain</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CREDENTIALS -->
+  <div class="divider"><hr /></div>
+  <section class="section" id="credentials">
+    <p class="sec-label">04 — Credentials</p>
+    <h2>Certifications &amp; <em>platforms</em></h2>
+    <div class="certs-grid fade-in">
+      <div class="cert-card">
+        <span class="cert-badge badge-inprogress">In progress</span>
+        <div class="cert-issuer">eLearnSecurity</div>
+        <div class="cert-name">eJPT — Junior Penetration Tester</div>
+        <div class="cert-desc">Entry-level hands-on pentesting cert. Covers enumeration, basic exploitation, and reporting. My first formal cert in offensive security.</div>
+      </div>
+      <div class="cert-card">
+        <span class="cert-badge badge-active">Active</span>
+        <div class="cert-issuer">TryHackMe</div>
+        <div class="cert-name">SOC Level 1 Path</div>
+        <div class="cert-desc">Working through blue team fundamentals — SIEM, log analysis, alert triage, and incident response. Good foundation alongside the offensive stuff.</div>
+      </div>
+      <div class="cert-card">
+        <span class="cert-badge badge-planned">Planned</span>
+        <div class="cert-issuer">Offensive Security</div>
+        <div class="cert-name">OSCP</div>
+        <div class="cert-desc">Long-term goal. The industry standard for penetration testing. I'll get there after building more consistent offensive experience through labs and CTFs.</div>
+      </div>
+    </div>
+    <div class="platforms fade-in" style="transition-delay:0.1s">
+      <a class="plat" href="https://app.hackthebox.com/users/2654701" target="_blank" rel="noopener">
+        <div class="plat-ico">H</div>
+        <div>
+          <div class="plat-name">HackTheBox</div>
+          <div class="plat-handle">@rozariyomartin · ID 2654701</div>
+        </div>
+        <span class="plat-arr">→</span>
+      </a>
+      <a class="plat" href="https://github.com/rozariyomartin" target="_blank" rel="noopener">
+        <div class="plat-ico">G</div>
+        <div>
+          <div class="plat-name">GitHub</div>
+          <div class="plat-handle">rozariyomartin — writeups &amp; tools</div>
+        </div>
+        <span class="plat-arr">→</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <div class="divider"><hr /></div>
+  <section class="section" id="contact">
+    <p class="sec-label">05 — Connect</p>
+    <h2>Get in <em>touch</em></h2>
+    <div class="contact-grid">
+      <div class="fade-in">
+        <p class="contact-heading">Happy to connect — <em>seriously</em>.</p>
+        <p class="contact-desc">
+          Whether it's a CTF team looking for a forensics/crypto person, someone who wants to discuss a writeup, 
+          or an internship opportunity — feel free to reach out. I try to reply to every message.
+        </p>
+        <div class="socials">
+          <a class="social-link" href="https://github.com/rozariyomartin" target="_blank" rel="noopener">
+            <span class="sl-ico">⌥</span>
+            GitHub — rozariyomartin
+            <span class="sl-arr">↗</span>
+          </a>
+          <a class="social-link" href="https://www.linkedin.com/in/martin-rozariyo-i-b47b6b288/" target="_blank" rel="noopener">
+            <span class="sl-ico">in</span>
+            LinkedIn — Martin Rozariyo I
+            <span class="sl-arr">↗</span>
+          </a>
+          <a class="social-link" href="https://x.com/MartinRozariyo" target="_blank" rel="noopener">
+            <span class="sl-ico">𝕏</span>
+            Twitter / X — @MartinRozariyo
+            <span class="sl-arr">↗</span>
+          </a>
+          <a class="social-link" href="https://app.hackthebox.com/users/2654701" target="_blank" rel="noopener">
+            <span class="sl-ico">⬡</span>
+            HackTheBox profile
+            <span class="sl-arr">↗</span>
+          </a>
+        </div>
+      </div>
+      <div class="fade-in" style="transition-delay:0.1s">
+        <div class="cform">
+          <div class="cform-title">Drop me a message</div>
+          <div class="frow">
+            <label class="flabel" for="c-name">Name</label>
+            <input class="finput" id="c-name" type="text" placeholder="Your name" />
+          </div>
+          <div class="frow">
+            <label class="flabel" for="c-email">Email</label>
+            <input class="finput" id="c-email" type="email" placeholder="you@example.com" />
+          </div>
+          <div class="frow">
+            <label class="flabel" for="c-msg">Message</label>
+            <textarea class="finput" id="c-msg" placeholder="What's up?"></textarea>
+          </div>
+          <a href="mailto:martin@rozariyomartin.me" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:4px;">
+            Send message →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">Martin Rozariyo</div>
+    <div class="footer-copy">© 2025 · All rights reserved</div>
+    <div class="footer-domain">rozariyomartin.me</div>
+  </div>
+</footer>
+
+<script defer src="script.js"></script>
+
 </body>
 </html>
