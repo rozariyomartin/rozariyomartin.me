@@ -31,7 +31,10 @@ jobs:
       - name: Configure GitHub Pages paths
         run: |
           REPO_NAME="${GITHUB_REPOSITORY#*/}"
-          if [ "$REPO_NAME" = "${GITHUB_REPOSITORY_OWNER}.github.io" ]; then
+          if [ -f CNAME ]; then
+            DOMAIN="$(head -n 1 CNAME)"
+            echo "NEXT_PUBLIC_SITE_URL=https://${DOMAIN}" >> "$GITHUB_ENV"
+          elif [ "$REPO_NAME" = "${GITHUB_REPOSITORY_OWNER}.github.io" ]; then
             echo "NEXT_PUBLIC_SITE_URL=https://${GITHUB_REPOSITORY_OWNER}.github.io" >> "$GITHUB_ENV"
           else
             echo "NEXT_PUBLIC_BASE_PATH=/$REPO_NAME" >> "$GITHUB_ENV"

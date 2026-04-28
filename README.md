@@ -11,7 +11,7 @@ npm run dev
 
 ## Static Deployment
 
-The app is configured for static export and can be deployed to GitHub Pages from the generated `out/` directory.
+The app is configured for static export and GitHub Pages deployment with the `rozariyomartin.me` custom domain.
 
 ```bash
 npm run build
@@ -19,7 +19,7 @@ npm run build
 
 The GitHub Actions workflow passes GitHub's built-in `GITHUB_TOKEN` during the build so writeup discovery can use the GitHub API without a personal access token. The deployed site is still static HTML.
 
-For project Pages deployments, set `NEXT_PUBLIC_BASE_PATH=/repository-name`. The included GitHub Actions workflow does this automatically.
+For project Pages deployments without a custom domain, set `NEXT_PUBLIC_BASE_PATH=/repository-name`. The included GitHub Actions workflow does this automatically when no `CNAME` file is present.
 
 ## Checks
 
