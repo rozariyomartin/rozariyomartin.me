@@ -19,8 +19,8 @@ export default async function WriteupsPage() {
         </h1>
         <p className="mt-5 text-base leading-8 text-muted-foreground">
           Markdown writeups discovered at build time from CTF_Writeups/2026 and
-          L3m0nCTF2025-Writeups, then rendered from raw GitHub markdown into static
-          pages.
+          L3m0nCTF2025-Writeups, plus selected external notes rendered as static
+          writeup pages.
         </p>
       </div>
 

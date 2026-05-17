@@ -62,7 +62,11 @@ export default async function WriteupPage({ params }: PageProps) {
     notFound();
   }
 
-  const source = await getRawMarkdown(writeup);
+  const source = writeup.source === "github" ? await getRawMarkdown(writeup) : null;
+  const sourceLabel =
+    writeup.source === "github" ? writeup.repo : "Notion";
+  const pathLabel =
+    writeup.source === "github" ? writeup.path : "Embedded external writeup";
 
   return (
     <main className="mx-auto w-full max-w-4xl px-5 py-12 sm:px-6 lg:px-8">
@@ -74,30 +78,56 @@ export default async function WriteupPage({ params }: PageProps) {
           </Link>
         </Button>
         <div className="flex flex-wrap gap-3">
-          <Button asChild variant="outline" className="w-fit">
-            <a href={writeup.rawUrl} target="_blank" rel="noreferrer">
-              Raw Markdown
-              <ExternalLink className="ml-2 size-4" aria-hidden="true" />
-            </a>
-          </Button>
-          <Button asChild variant="outline" className="w-fit">
-            <a href={writeup.htmlUrl} target="_blank" rel="noreferrer">
-              View on GitHub
-              <ExternalLink className="ml-2 size-4" aria-hidden="true" />
-            </a>
-          </Button>
+          {writeup.source === "github" ? (
+            <>
+              <Button asChild variant="outline" className="w-fit">
+                <a href={writeup.rawUrl} target="_blank" rel="noreferrer">
+                  Raw Markdown
+                  <ExternalLink className="ml-2 size-4" aria-hidden="true" />
+                </a>
+              </Button>
+              <Button asChild variant="outline" className="w-fit">
+                <a href={writeup.htmlUrl} target="_blank" rel="noreferrer">
+                  View on GitHub
+                  <ExternalLink className="ml-2 size-4" aria-hidden="true" />
+                </a>
+              </Button>
+            </>
+          ) : (
+            <Button asChild variant="outline" className="w-fit">
+              <a href={writeup.htmlUrl} target="_blank" rel="noreferrer">
+                Open in Notion
+                <ExternalLink className="ml-2 size-4" aria-hidden="true" />
+              </a>
+            </Button>
+          )}
         </div>
       </div>
 
       <article>
         <header className="mb-10">
-          <p className="text-sm font-medium text-primary">{writeup.repo}</p>
+          <p className="text-sm font-medium text-primary">{sourceLabel}</p>
           <h1 className="mt-3 text-4xl font-semibold tracking-normal text-foreground sm:text-5xl">
             {writeup.title}
           </h1>
-          <p className="mt-4 font-mono text-xs text-muted-foreground">{writeup.path}</p>
+          <p className="mt-4 font-mono text-xs text-muted-foreground">{pathLabel}</p>
         </header>
-        <MdxContent source={source} />
+        {writeup.source === "github" ? (
+          <MdxContent source={source ?? ""} />
+        ) : (
+          <div className="overflow-hidden rounded-lg border bg-white">
+            <iframe
+              src={writeup.embedUrl}
+              title={writeup.title}
+              width="100%"
+              height="720"
+              loading="lazy"
+              allowFullScreen
+              referrerPolicy="strict-origin-when-cross-origin"
+              className="block min-h-[720px] w-full bg-white"
+            />
+          </div>
+        )}
       </article>
     </main>
   );

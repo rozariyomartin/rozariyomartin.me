@@ -4,7 +4,7 @@ import { getWriteups } from "@/lib/github";
 export const dynamic = "force-static";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://rozariyomartin.github.io";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://rozariyomartin.me";
   const writeups = await getWriteups();
 
   return [

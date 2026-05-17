@@ -27,16 +27,27 @@ type WriteupSource = {
   pathPrefix?: string;
 };
 
-export type Writeup = {
+type BaseWriteup = {
   slug: string;
   title: string;
   preview: string;
   repo: string;
   path: string;
-  branch: string;
   htmlUrl: string;
+};
+
+export type GitHubWriteup = BaseWriteup & {
+  source: "github";
+  branch: string;
   rawUrl: string;
 };
+
+export type NotionWriteup = BaseWriteup & {
+  source: "notion";
+  embedUrl: string;
+};
+
+export type Writeup = GitHubWriteup | NotionWriteup;
 
 const WRITEUP_SOURCES: WriteupSource[] = [
   {
@@ -47,6 +58,19 @@ const WRITEUP_SOURCES: WriteupSource[] = [
   {
     repo: "L3m0nCTF2025-Writeups",
     branch: "main"
+  }
+];
+
+const NOTION_WRITEUPS: NotionWriteup[] = [
+  {
+    source: "notion",
+    slug: "notion-writeup-35d45fde",
+    title: "Notion Writeup",
+    preview: "External Notion writeup embedded as a dedicated static writeup page.",
+    repo: "Notion",
+    path: "35d45fde4b3980fea70ed99882fabb0b",
+    htmlUrl: "https://bead-school-b86.notion.site/35d45fde4b3980fea70ed99882fabb0b",
+    embedUrl: "https://bead-school-b86.notion.site/ebd/35d45fde4b3980fea70ed99882fabb0b"
   }
 ];
 
@@ -246,6 +270,7 @@ export async function getWriteups(): Promise<Writeup[]> {
           const fallbackTitle = titleFromPath(repo.name, path);
 
           return {
+            source: "github",
             slug: makeSlug(repo.name, path),
             title: extractTitle(markdown ?? "", fallbackTitle),
             preview: extractPreview(markdown ?? "", repo.description ?? "CTF writeup."),
@@ -254,15 +279,17 @@ export async function getWriteups(): Promise<Writeup[]> {
             branch,
             htmlUrl: htmlUrl(repo, path, branch),
             rawUrl: rawMarkdownUrl(repo.name, path, branch)
-          } satisfies Writeup;
+          } satisfies GitHubWriteup;
         })
       );
     })
   );
 
-  return nestedWriteups
+  const githubWriteups = nestedWriteups
     .flat()
     .sort((a, b) => `${a.repo}/${a.path}`.localeCompare(`${b.repo}/${b.path}`));
+
+  return [...NOTION_WRITEUPS, ...githubWriteups];
 }
 
 export async function getWriteupBySlug(slug: string) {
@@ -270,7 +297,7 @@ export async function getWriteupBySlug(slug: string) {
   return writeups.find((writeup) => writeup.slug === slug) ?? null;
 }
 
-export async function getRawMarkdown(writeup: Writeup) {
+export async function getRawMarkdown(writeup: GitHubWriteup) {
   const markdown = await getMarkdownText(writeup.repo, writeup.path, writeup.branch);
   return (
     markdown ??
