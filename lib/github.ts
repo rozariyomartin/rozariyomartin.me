@@ -64,13 +64,13 @@ const WRITEUP_SOURCES: WriteupSource[] = [
 const NOTION_WRITEUPS: NotionWriteup[] = [
   {
     source: "notion",
-    slug: "notion-writeup-35d45fde",
-    title: "Notion Writeup",
-    preview: "External Notion writeup embedded as a dedicated static writeup page.",
+    slug: "ramunchers-ctf-writeups-r0z4r1y0",
+    title: "RAMunchers CTF - Writeups",
+    preview: "RAMunchers CTF writeups hosted on Notion and embedded as a static writeup page.",
     repo: "Notion",
-    path: "35d45fde4b3980fea70ed99882fabb0b",
-    htmlUrl: "https://bead-school-b86.notion.site/35d45fde4b3980fea70ed99882fabb0b",
-    embedUrl: "https://bead-school-b86.notion.site/ebd/35d45fde4b3980fea70ed99882fabb0b"
+    path: "36341764502f80b5a8efe9e018912bdb",
+    htmlUrl: "https://rozariyomartin.notion.site/36341764502f80b5a8efe9e018912bdb",
+    embedUrl: "https://rozariyomartin.notion.site/ebd/36341764502f80b5a8efe9e018912bdb"
   }
 ];
 
