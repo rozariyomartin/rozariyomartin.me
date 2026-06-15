@@ -1,6 +1,5 @@
 import { ArrowUpRight, BriefcaseBusiness, Code2 } from "lucide-react";
 import { MotionSection } from "@/components/motion-section";
-import { TerminalCard } from "@/components/terminal-card";
 import { Button } from "@/components/ui/button";
 
 export function HeroSection() {
